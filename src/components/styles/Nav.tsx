@@ -23,7 +23,7 @@ export const NavTitle = styled.span`
 export const NavBtn = styled.span`
   position: absolute;
   top: 50%;
-  right: 20px;
+  right: 40px;
   transform: translateY(-50%);
   transition: all 200ms ease-in-out;
   width: 3vw;
@@ -50,7 +50,7 @@ export const NavContainer = styled.div`
   opacity: 0;
   transition: all 450ms ease-in-out;
   &.clicked {
-    transform: translateY(-20%);
+    transform: translateY(-10%);
     opacity: 1;
   }
 `;

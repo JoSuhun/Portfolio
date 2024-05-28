@@ -3,15 +3,26 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   width: 90vw;
   min-height: 70vh;
-  margin: 20vh 5vw;
+  margin: 10vh 10vw;
   position: relative;
+  display: flex;
 `;
+
+// GlbSection
+export const GlbWrapper = styled.div`
+  height: 60vh;
+  width: 50vw;
+  background-color: transparent;
+`;
+
+// IntroSection
 
 export const IntroContainer = styled.div`
   font-family: Galmuri11;
-  padding: 5% 0;
+  padding-top: 20vh;
   display: flex;
   flex-direction: column;
+  position: relative;
 
   .typing {
     width: max-content;
@@ -23,7 +34,7 @@ export const IntroContainer = styled.div`
   .typing::after {
     content: "어서오세요,";
     position: absolute;
-    top: 3%;
+    top: 20%;
     color: var(--color-red);
     overflow: hidden;
     border-right: 1px solid var(--color-red);
@@ -47,8 +58,10 @@ export const IntroContainer = styled.div`
   }
 
   .content {
-    li {
-      font-size: 1.3rem;
+    padding-top: 30px;
+    p {
+      font-size: 1.2rem;
+      padding-bottom: 5px;
     }
   }
 `;

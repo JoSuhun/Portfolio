@@ -1,5 +1,8 @@
 import React from "react";
 import * as h from "../styles/Home";
+import { Canvas } from "@react-three/fiber";
+import TomatoGlbModel from "./TomatoGlbModel";
+import { OrbitControls } from "@react-three/drei";
 
 const IntroSection = () => {
   return (
@@ -11,12 +14,32 @@ const IntroSection = () => {
           <p>생각이 많은 개발자 조수훈입니다.</p>
         </div>
 
-        <ul className="content">
-          <li>효율적이고 재사용이 가능한 코드를 작성합니다.</li>
-          <li>사용자 경험을 따른 사용자 입장의 UI/UX를 중시합니다.</li>
-          <li>긍정적인 관계에서 나오는 팀워크의 힘을 중요하게 생각합니다.</li>
-        </ul>
+        <div className="content">
+          <p>효율적이고 재사용이 가능한 코드를 작성합니다.</p>
+          <p>사용자 경험을 따른 사용자 입장의 UI/UX를 중시합니다.</p>
+          <p>긍정적인 관계에서 나오는 팀워크의 힘을 중요하게 생각합니다.</p>
+        </div>
       </h.IntroContainer>
+
+      <h.GlbWrapper>
+        <Canvas
+          gl={{ antialias: true }}
+          shadows={"soft"}
+          camera={{
+            fov: 60,
+            // aspect: window.innerWidth / window.innerHeight,
+            near: 0.1,
+            far: 100,
+            position: [5, 5, 8],
+          }}
+        >
+          <OrbitControls enableZoom={false} />
+          <directionalLight intensity={1} position={[1, 1, 1]} />
+          <directionalLight intensity={1} position={[1, -1, -1]} />
+          <directionalLight intensity={0.7} position={[-1, -10, -100]} />
+          <TomatoGlbModel />
+        </Canvas>
+      </h.GlbWrapper>
     </h.Wrapper>
   );
 };
