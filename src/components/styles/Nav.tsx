@@ -38,7 +38,7 @@ export const NavBtn = styled.span`
 `;
 
 export const NavContainer = styled.div`
-  background-color: #00000027;
+  background-color: #00000046;
   display: flex;
   justify-content: center;
   position: fixed;
@@ -62,7 +62,7 @@ export const NavList = styled.div`
 
 export const NavItem = styled.p`
   font-family: Galmuri11;
-  font-size: 1.1rem;
-  color: grey;
+  font-size: 1.3rem;
+  color: white;
   margin-bottom: 5vh;
 `;
