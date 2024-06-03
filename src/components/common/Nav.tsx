@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import * as n from "../styles/Nav";
 import navbtn from "/img/nav-btn.png";
 
