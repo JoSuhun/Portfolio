@@ -1,4 +1,3 @@
-import React from "react";
 import * as h from "../styles/Home";
 import { Canvas } from "@react-three/fiber";
 import TomatoGlbModel from "./TomatoGlbModel";

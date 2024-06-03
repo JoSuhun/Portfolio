@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import * as h from "../styles/Home";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Sparkles } from "@react-three/drei";

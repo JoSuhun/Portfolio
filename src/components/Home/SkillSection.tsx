@@ -1,4 +1,3 @@
-import React from "react";
 import * as h from "../styles/Home";
 import html_img from "/img/skills/html.png";
 import css_img from "/img/skills/css.png";
