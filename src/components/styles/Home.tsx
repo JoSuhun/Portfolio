@@ -1,60 +1,18 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  /* width: 90vw; */
   min-height: 65vh;
+  width: 80vw;
   margin: 10vh 10vw;
   position: relative;
-  display: flex;
-  /* align-items: center; */
-`;
-
-// GlbSection
-export const GlbWrapper = styled.div`
-  height: 60vh;
-  width: 35vw;
-  padding-top: 10vh;
-
-  background-color: transparent;
-`;
-
-// IntroSection
-
-export const IntroContainer = styled.div`
   font-family: Galmuri11;
-  padding-top: 15vh;
-  display: flex;
-  flex-direction: column;
-  position: relative;
 
   .typing {
     margin-bottom: 10px;
     width: max-content;
-    color: transparent;
+    color: var(--color-red);
     font-size: 1.7rem;
     white-space: nowrap;
-  }
-
-  .typing::after {
-    content: "안녕하세요,";
-    /* position: absolute; */
-    /* top: 20%; */
-    color: var(--color-red);
-    overflow: hidden;
-    border-right: 1px solid var(--color-red);
-    animation: typing 3s steps(6) infinite;
-  }
-
-  @keyframes typing {
-    0% {
-      width: 0%;
-    }
-    50% {
-      width: 150px;
-    }
-    100% {
-      width: 0%;
-    }
   }
 
   .title {
@@ -68,12 +26,27 @@ export const IntroContainer = styled.div`
       }
     }
   }
+`;
+
+// GlbSection
+export const GlbWrapper = styled.div`
+  height: 60vh;
+  background-color: transparent;
+  overflow: visible;
+`;
+
+// IntroSection
+export const IntroContainer = styled.div`
+  padding-top: 15vh;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  position: relative;
 
   .content {
     padding-top: 70px;
     font-family: Pretendard-Light;
     p {
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       padding-bottom: 7px;
     }
   }
@@ -84,14 +57,30 @@ export const IntroContainer = styled.div`
 export const InfoContainer = styled.div`
   height: 100%;
   width: 100%;
+  overflow: hidden;
+  /* display: flex; */
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  transform: translateX(0);
+  transition: all 500ms ease-in-out;
+
+  &.clicked {
+    transform: translateX(-22%);
+    .glb_section {
+      /* opacity: 0; */
+    }
+  }
+
+  section {
+    padding: 10% 0;
+  }
 
   hr {
     display: block;
     position: absolute;
-    border-top: 2px solid transparent;
+    border-top: 1px solid transparent;
     z-index: -1;
     left: 0px;
-    margin: 0;
   }
   hr.right {
     left: auto;
@@ -112,4 +101,211 @@ export const InfoContainer = styled.div`
       width: 100%;
     }
   }
+`;
+
+export const InfoLeftSection = styled.section`
+  /* width: 20vw; */
+`;
+
+export const InfoMidSection = styled.section`
+  /* width: 50vw; */
+  margin-right: 20px;
+`;
+
+export const InfoRightSection = styled.section`
+  /* width: 50vw; */
+  position: relative;
+  height: 40%;
+  width: 55%;
+  margin-left: 7%;
+  align-self: center;
+  justify-self: start;
+  border: 1px solid black;
+
+  &::after {
+    width: 30px;
+    height: 30px;
+    background-color: green;
+    position: absolute;
+    top: 50%;
+  }
+`;
+
+export const InfoBox = styled.div`
+  /* border: 1px solid yellow; */
+  margin: 20px 0;
+  padding: 20px;
+
+  display: grid;
+  grid-template-columns: 0.7fr 1fr;
+  font-family: Galmuri11;
+
+  border-radius: 30px;
+  background: var(--card-background);
+  box-shadow: var(--card-shadow);
+  :nth-child(3) {
+    padding-top: 15px;
+  }
+  :nth-child(4) {
+    padding-top: 15px;
+  }
+  /* cursor: pointer; */
+  transform: translateY(0%);
+  transition: transform 300ms ease-in-out;
+  &:hover {
+    transform: translateY(-5%);
+  }
+`;
+
+export const InfoDate = styled.p``;
+
+export const InfoContent = styled.p`
+  font-size: 1.1rem;
+  display: flex;
+  position: relative;
+`;
+
+export const SkillContainer = styled.div`
+  width: 100%;
+  min-height: 50vh;
+  margin-top: 10px;
+
+  display: grid;
+  grid-template-areas:
+    "competent advanced"
+    "competent beginner";
+  gap: 20px;
+  overflow: visible;
+`;
+
+export const SkillBox = styled.div<{ point: string }>`
+  display: flex;
+  position: relative;
+  padding: 20px;
+  /* margin: 10px; */
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  background-color: var(--card-background);
+  box-shadow: var(--card-shadow);
+  border-radius: 10px;
+  cursor: pointer;
+  .level {
+    background: linear-gradient(
+      to top,
+      ${(props) => props.point} 50%,
+      transparent 40%
+    );
+  }
+
+  .ex {
+    display: none;
+    background-color: ${(props) => props.point};
+  }
+
+  &.competent {
+    grid-area: competent;
+    .competent_ex {
+      bottom: -60px;
+      left: 0;
+      &::after {
+        content: "";
+        position: absolute;
+        top: -20px;
+        left: 30px;
+        width: 0;
+        height: 0;
+        border: 10px solid transparent;
+        border-top-color: ${(props) => props.point};
+        rotate: 180deg;
+      }
+    }
+    &:hover .competent_ex {
+      display: block;
+    }
+  }
+
+  &.advanced {
+    grid-area: advanced;
+    .advanced_ex {
+      top: -55px;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -20px;
+        left: 30px;
+        width: 0;
+        height: 0;
+        border: 10px solid transparent;
+        border-top-color: ${(props) => props.point};
+      }
+    }
+    &:hover .advanced_ex {
+      display: block;
+    }
+  }
+
+  &.beginner {
+    grid-area: beginner;
+    .beginner_ex {
+      bottom: -60px;
+      right: 0;
+      &::after {
+        content: "";
+        position: absolute;
+        top: -20px;
+        left: 30px;
+        width: 0;
+        height: 0;
+        border: 10px solid transparent;
+        border-top-color: ${(props) => props.point};
+        rotate: 180deg;
+      }
+    }
+    &:hover .beginner_ex {
+      display: block;
+    }
+  }
+`;
+
+export const SkillLevel = styled.p`
+  color: var(--color-grey);
+  padding-left: 5px;
+  padding-right: 15px;
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+  align-self: start;
+  /* width: 100%; */
+`;
+
+export const SkillItem = styled.div`
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  background-color: #ffffff41;
+  display: flex;
+  font-family: Pretendard-Light;
+  font-size: 1.1rem;
+  img {
+    height: 40px;
+  }
+  .skill_text {
+    font-family: Galmuri11-Bold;
+    font-size: 0.9rem;
+    padding-bottom: 5px;
+  }
+  div {
+    margin-left: 20px;
+  }
+`;
+
+export const Additional = styled.div`
+  position: absolute;
+  border-radius: 5px;
+  padding: 10px;
+  min-width: 100px;
+  color: var(--color-grey);
+  font-size: 0.9rem;
+  font-family: Pretendard;
 `;

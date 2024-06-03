@@ -19,9 +19,9 @@ const TomatoSection = () => {
         }}
       >
         <OrbitControls enableZoom={false} />
-        {/* <directionalLight intensity={1.3} position={[1, 1, 1]} /> */}
-        {/* <directionalLight intensity={1} position={[100, -1, -1]} /> */}
-        {/* <directionalLight intensity={1} position={[100, 100, -50]} /> */}
+        <directionalLight intensity={1} position={[1, 1, 1]} />
+        <directionalLight intensity={1} position={[100, -1, -1]} />
+        <directionalLight intensity={1} position={[100, 100, -50]} />
         <TomatoGlbModel />
       </Canvas>
     </h.GlbWrapper>
