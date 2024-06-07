@@ -17,13 +17,13 @@ export const Wrapper = styled.div`
 
   .title {
     font-size: 2.1rem;
-    .title-expand {
-      font-family: Pretendard-ExtraLight;
-      padding-top: 10px;
-      font-size: 1.6rem;
-      :nth-child(2) {
-        text-decoration: var(--color-green) wavy underline;
-      }
+  }
+  .title-expand {
+    font-family: Pretendard-ExtraLight;
+    padding-top: 10px;
+    font-size: 1.6rem;
+    :nth-child(2) {
+      text-decoration: var(--color-green) wavy underline;
     }
   }
 `;
@@ -48,6 +48,13 @@ export const IntroContainer = styled.div`
     p {
       font-size: 1.5rem;
       padding-bottom: 7px;
+    }
+    span {
+      background: linear-gradient(
+        to top,
+        rgba(255, 236, 69, 0.274) 40%,
+        transparent 40%
+      );
     }
   }
 `;
@@ -112,28 +119,10 @@ export const InfoMidSection = styled.section`
   margin-right: 20px;
 `;
 
-export const InfoRightSection = styled.section`
-  /* width: 50vw; */
-  position: relative;
-  height: 40%;
-  width: 55%;
-  margin-left: 7%;
-  align-self: center;
-  justify-self: start;
-  border: 1px solid black;
-
-  &::after {
-    width: 30px;
-    height: 30px;
-    background-color: green;
-    position: absolute;
-    top: 50%;
-  }
-`;
-
 export const InfoBox = styled.div`
   /* border: 1px solid yellow; */
-  margin: 20px 0;
+  /* margin: 20px 0; */
+  margin-bottom: 20px;
   padding: 20px;
 
   display: grid;
@@ -155,6 +144,16 @@ export const InfoBox = styled.div`
   &:hover {
     transform: translateY(-5%);
   }
+  /* &.ssafy {
+    background-color: #fad975;
+  } */
+`;
+
+export const InfoTitle = styled.p`
+  /* background-color: red; */
+  margin-left: 5px;
+  margin-bottom: 5px;
+  font-family: Galmuri11-Bold;
 `;
 
 export const InfoDate = styled.p``;
@@ -307,7 +306,7 @@ export const Additional = styled.div`
   padding: 10px;
   min-width: 100px;
   color: var(--color-grey);
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-family: Pretendard;
 `;
 

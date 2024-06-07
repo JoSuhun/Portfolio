@@ -27,7 +27,6 @@ const InfoSection = () => {
         <hr className={scrollPosition > 40 ? "line" : ""} />
 
         <h.InfoLeftSection className="glb_section">
-          {" "}
           <h.GlbWrapper>
             <Canvas
               gl={{ antialias: true }}
@@ -47,7 +46,7 @@ const InfoSection = () => {
                 position={[3, 5, 10]}
                 color={"yellow"}
               />
-              <directionalLight intensity={0.7} position={[-10, 7, 10]} />
+              <directionalLight intensity={1} position={[-10, 7, 10]} />
               <directionalLight
                 intensity={0.7}
                 position={[10, 10, 10]}
@@ -79,6 +78,7 @@ const InfoSection = () => {
         </h.InfoLeftSection>
 
         <h.InfoMidSection>
+          <h.InfoTitle>학력 / 경력</h.InfoTitle>
           <h.InfoBox>
             <h.InfoDate>2016. 03. ~ 2021. 02.</h.InfoDate>
             <h.InfoContent>전남대학교 행정학과 졸업</h.InfoContent>
@@ -89,14 +89,16 @@ const InfoSection = () => {
               광주광역시교육청 지방교육행정서기보 (행정9급)
             </h.InfoContent>
           </h.InfoBox>
-          <h.InfoBox>
+          <h.InfoTitle>교육 사항</h.InfoTitle>
+          <h.InfoBox className="ssafy">
             <h.InfoDate>2023. 07. ~ 2024. 06.</h.InfoDate>
             <h.InfoContent>삼성 청년 소프트웨어 아카데미 (SSAFY)</h.InfoContent>
           </h.InfoBox>
+          <h.InfoTitle>어학 / 자격증</h.InfoTitle>
           <h.InfoBox>
             <h.InfoDate>2023. 06.</h.InfoDate>
             <h.InfoContent>Toeic Speaking IH (140)</h.InfoContent>
-            <h.InfoDate>2023. 04.</h.InfoDate>
+            <h.InfoDate>2024. 04.</h.InfoDate>
             <h.InfoContent>SQL 개발자 (SQLD)</h.InfoContent>
           </h.InfoBox>
         </h.InfoMidSection>

@@ -4,6 +4,7 @@ import Galmuri11Bold from "./fonts/Galmuri11-Bold.woff2";
 import PretendardExtraLight from "./fonts/Pretendard-ExtraLight.woff2";
 import PretendardLight from "./fonts/Pretendard-Light.woff2";
 import Pretendard from "./fonts/Pretendard-Regular.woff2";
+import PretendardSemiBold from "./fonts/Pretendard-SemiBold.woff2";
 
 export const GlobalStyle = createGlobalStyle`
     @font-face {
@@ -38,6 +39,12 @@ export const GlobalStyle = createGlobalStyle`
         src: local('Pretendard'), local('Pretendard');
         font-style: normal;
         src: url(${Pretendard}) format('woff2');
+    }
+    @font-face {
+        font-family: 'Pretendard-Bold';
+        src: local('Pretendard-SemiBold'), local('Pretendard-SemiBold');
+        font-style: bold;
+        src: url(${PretendardSemiBold}) format('woff2');
     }
 
     html {

@@ -19,9 +19,17 @@ const IntroSection = () => {
           </div>
 
           <div className="content">
-            <p>효율적이고 재사용이 가능한 코드를 작성합니다.</p>
-            <p>사용자 경험과 사용자 입장의 UI/UX를 중시합니다.</p>
-            <p>긍정적인 관계에서 나오는 팀워크의 힘을 중요하게 생각합니다.</p>
+            <p>
+              <span>효율적</span>이고 <span>재사용이 가능한</span> 코드를
+              작성합니다.
+            </p>
+            <p>
+              <span>사용자 경험</span>과 사용자 입장의 UI/UX를 중시합니다.
+            </p>
+            <p>
+              <span>긍정적인 관계</span>에서 나오는 <span>팀워크</span>의 힘을
+              중요하게 생각합니다.
+            </p>
           </div>
         </section>
 

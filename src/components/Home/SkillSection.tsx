@@ -17,7 +17,7 @@ const SkillSection = () => {
       <div className="title">이러한 기술을 갖추고 있어요.</div>
       <h.SkillContainer>
         {/* competent */}
-        <h.SkillBox className="competent" point="#ffc07890">
+        <h.SkillBox className="competent" point="#ffdf7f">
           <h.Additional className="ex competent_ex">
             6주 이상의 프로젝트에서 활용한 경험이 있습니다.
           </h.Additional>
@@ -69,7 +69,7 @@ const SkillSection = () => {
         </h.SkillBox>
 
         {/* advanced */}
-        <h.SkillBox className="advanced" point="#ffe0909d">
+        <h.SkillBox className="advanced" point="#fde69e">
           <h.Additional className="ex advanced_ex">
             1-2주의 소규모 프로젝트에서 활용한 경험이 있습니다.
           </h.Additional>
@@ -98,7 +98,7 @@ const SkillSection = () => {
         </h.SkillBox>
 
         {/* beginner */}
-        <h.SkillBox className="beginner" point="#ffec9fc9">
+        <h.SkillBox className="beginner" point="#ffeebc">
           <h.Additional className="ex beginner_ex">
             차후 프로젝트에 활용하기 위해 학습하였습니다.
           </h.Additional>
