@@ -1,9 +1,20 @@
 {
   "stellAR": {
+    "title": "StellAR",
+    "image": [
+      "/img/project/stellAR_main.png",
+      "/img/project/stellAR_planet.png",
+      "/img/project/stellAR_constellation.png",
+      "/img/project/stellAR_starmark.png"
+    ],
     "intro": {
       "date": "2024. 04. 08. ~ 2024. 05. 20.",
       "summary": "증강현실(AR)과 3D맵을 활용한 별자리 앱 서비스",
       "background": "빛 공해로 인해 보이지 않는 별들을 휴대폰과 스크린을 통해 보여주고, 별자리를 직접 만들어보는 체험을 제공하기 위함"
+    },
+    "link": {
+      "github": "https://github.com/JoSuhun/StellAR",
+      "notion": "https://www.notion.so/SSAFY-C105-StellAR-5f713f4f6266461ea42d7d83256d03c0?pvs=4https://www.notion.so/SSAFY-C105-StellAR-5f713f4f6266461ea42d7d83256d03c0?pvs=4"
     },
     "skill": [
       "TypeScript",
@@ -50,10 +61,21 @@
     ]
   },
   "너에게, 로그인": {
+    "title": "너에게, 로그인",
+    "image": [
+      "/img/project/Neoro_main.png",
+      "/img/project/Neoro_diary.gif",
+      "/img/project/Neoro_chat.png",
+      "/img/project/Neoro_calendar.png"
+    ],
     "intro": {
       "date": "2024. 01. 03. ~ 2024. 02. 16.",
       "summary": "WebRTC 기술 기반의 원격 사진 촬영 다이어리 SNS",
       "background": "서로를 잘 모르거나, 원거리로 자주 만나지 못하는 커플들을 위한 교류 애플리케이션의 필요성의 대두"
+    },
+    "link": {
+      "github": "https://github.com/JoSuhun/LoginToYou",
+      "notion": "https://www.notion.so/SSAFY-C105-b66fda469031406dbba5a4e9704c900d?pvs=4"
     },
     "skill": [
       "TypeScript",
@@ -80,10 +102,21 @@
     ]
   },
   "Neureka": {
+    "title": "Neureka",
+    "image": [
+      "/img/project/Neureka_main.gif",
+      "/img/project/Neureka_all.gif",
+      "/img/project/Neureka_detail.gif",
+      "/img/project/Neureka_bookmark.gif"
+    ],
     "intro": {
       "date": "2024. 02. 26. ~ 2024. 04. 05.",
       "summary": "빅데이터 알고리즘을 기반으로 한 증권 테마 뉴스 추천 서비스",
       "background": "개인 투자자가 늘어나고 있는 가운데, 사용자 맞춤 기사를 모아볼 수 있는 서비스 제공"
+    },
+    "link": {
+      "github": "https://github.com/JoSuhun/Neureka",
+      "notion": "https://www.notion.so/SSAFY-C105-NEureka-9df1c4ca20e5484ea951bb89593eac87?pvs=4"
     },
     "skill": ["TypeScript", "Node.js", "vite", "React", "Jotai", "react-query"],
     "task": [
