@@ -4,6 +4,9 @@ export const NavWrapper = styled.div`
   width: 100vw;
   height: 5vh;
   position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: end;
   z-index: 10;
   top: 0;
   left: 0;
@@ -11,29 +14,22 @@ export const NavWrapper = styled.div`
   font-family: Galmuri11;
 `;
 
-export const NavTitle = styled.span`
-  font-size: 1.3rem;
-  position: absolute;
-  top: 50%;
-  left: 3%;
-  transform: translateY(-50%);
-  color: var(--color-beige);
+export const NavBtnBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding-right: 3%;
+  width: 20vw;
 `;
 
-export const NavBtn = styled.span`
-  position: absolute;
-  top: 50%;
-  right: 40px;
-  transform: translateY(-50%);
-  transition: all 200ms ease-in-out;
-  width: 3vw;
+export const NavBtn = styled.div`
   cursor: pointer;
-  img {
-    height: 100%;
-    width: 100%;
-  }
+  font-family: Galmuri11-Bold;
   &:hover {
-    transform: translateY(-57%);
+    transform: translateY(-3%);
+  }
+  &.focused {
+    color: #ececec;
+    text-shadow: 2px 2px var(--color-grey);
   }
 `;
 

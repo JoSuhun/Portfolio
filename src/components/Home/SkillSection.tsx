@@ -9,12 +9,38 @@ import threejs_img from "/img/skills/three.png";
 import django_img from "/img/skills/django.png";
 import vue_img from "/img/skills/vue.png";
 import nextjs_img from "/img/skills/next.png";
+import { useEffect, useRef, useState } from "react";
+import { useSetAtom } from "jotai";
+import { SkillsAtom } from "../../stores/NavAtom";
 
 const SkillSection = () => {
+  const SetSkillRef = useSetAtom(SkillsAtom);
+  const Ref = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    if (Ref.current) {
+      SetSkillRef(Ref.current);
+    }
+  }, [Ref, SetSkillRef]);
+
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const updateScroll = () => {
+    setScrollPosition(window.scrollY || document.documentElement.scrollTop);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", updateScroll);
+    return () => {
+      window.removeEventListener("scroll", updateScroll);
+    };
+  }, []);
+
   return (
-    <h.Wrapper>
-      <p className="typing">Skills,</p>
-      <div className="title">이러한 기술을 갖추고 있어요.</div>
+    <h.Wrapper ref={Ref}>
+      <div className={scrollPosition > 900 ? "header focused" : "header"}>
+        <p className="typing">Skills,</p>
+        <div className="title">이러한 기술을 갖추고 있어요.</div>
+      </div>
       <h.SkillContainer>
         {/* competent */}
         <h.SkillBox className="competent" point="#ffdf7f">

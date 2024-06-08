@@ -59,9 +59,22 @@ export const GlobalStyle = createGlobalStyle`
 
     body {
         background-color: #EAEBDB;
+        position: relative;
+
         margin: 0;
         color: var(--color-grey);
         word-break: keep-all;
+        &::before{
+            content: '';
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            position: absolute;
+            background-image:url('/img/background_paper.jpg');
+            background-size: cover;
+            opacity: 0.5;
+        }
     }
 
     div {

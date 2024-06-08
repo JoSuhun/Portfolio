@@ -1,28 +1,58 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import * as n from "../styles/Nav";
-import navbtn from "/img/nav-btn.png";
+import { useAtomValue } from "jotai";
+import { IntroAtom, ProjectsAtom, SkillsAtom } from "../../stores/NavAtom";
 
 const Nav = () => {
-  const [navClicked, setNavClicked] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const IntroRef = useAtomValue(IntroAtom);
+  const SkillsRef = useAtomValue(SkillsAtom);
+  const ProjectsRef = useAtomValue(ProjectsAtom);
+
+  const scrollToRef = (ref: HTMLDivElement) => {
+    if (ref) {
+      const top = ref.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({ top, behavior: "smooth" });
+    }
+  };
+
+  const updateScroll = () => {
+    setScrollPosition(window.scrollY || document.documentElement.scrollTop);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", updateScroll);
+    return () => {
+      window.removeEventListener("scroll", updateScroll);
+    };
+  }, []);
+
   return (
     <>
       <n.NavWrapper>
-        {/* <n.NavTitle>어서오세요, </n.NavTitle> */}
-        <n.NavBtn onClick={() => setNavClicked(!navClicked)}>
-          <img src={navbtn} alt="nav_btn" />
-        </n.NavBtn>
+        <n.NavBtnBox>
+          <n.NavBtn
+            className={scrollPosition < 1000 ? "focused" : ""}
+            onClick={() => IntroRef?.scrollIntoView({ behavior: "smooth" })}
+          >
+            안녕하세요?
+          </n.NavBtn>
+          <n.NavBtn
+            className={
+              scrollPosition >= 1000 && scrollPosition < 1800 ? "focused" : ""
+            }
+            onClick={() => scrollToRef(SkillsRef as HTMLDivElement)}
+          >
+            Skills
+          </n.NavBtn>
+          <n.NavBtn
+            className={scrollPosition >= 1800 ? "focused" : ""}
+            onClick={() => scrollToRef(ProjectsRef as HTMLDivElement)}
+          >
+            Projects
+          </n.NavBtn>
+        </n.NavBtnBox>
       </n.NavWrapper>
-      <n.NavContainer className={navClicked ? "clicked" : ""}>
-        <n.NavList>
-          <n.NavItem>
-            안녕하세요,
-            <br />
-            처음뵙겠습니다 - !
-          </n.NavItem>
-          <n.NavItem>이러한 기술을 갖추고 있어요.</n.NavItem>
-          <n.NavItem>저의 프로젝트를 소개합니다.</n.NavItem>
-        </n.NavList>
-      </n.NavContainer>
     </>
   );
 };

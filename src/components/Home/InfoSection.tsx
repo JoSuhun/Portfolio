@@ -3,6 +3,7 @@ import * as h from "../styles/Home";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Sparkles } from "@react-three/drei";
 import PokemonGlbModel from "./PokemonGlbModel";
+import BeachBallModel from "./BeachBallModel";
 
 const InfoSection = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -12,11 +13,8 @@ const InfoSection = () => {
   };
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      window.addEventListener("scroll", updateScroll);
-    }, 100);
+    window.addEventListener("scroll", updateScroll);
     return () => {
-      clearInterval(timer);
       window.removeEventListener("scroll", updateScroll);
     };
   }, []);
@@ -24,8 +22,6 @@ const InfoSection = () => {
   return (
     <h.Wrapper>
       <h.InfoContainer>
-        <hr className={scrollPosition > 40 ? "line" : ""} />
-
         <h.InfoLeftSection className="glb_section">
           <h.GlbWrapper>
             <Canvas
@@ -34,13 +30,12 @@ const InfoSection = () => {
               shadows={"soft"}
               camera={{
                 fov: 60,
-                // aspect: window.innerWidth / window.innerHeight,
                 near: 0.1,
                 far: 100,
                 position: [-3, 3, 10],
               }}
             >
-              <OrbitControls />
+              <OrbitControls enableZoom={false} />
               <directionalLight
                 intensity={1}
                 position={[3, 5, 10]}
@@ -53,23 +48,15 @@ const InfoSection = () => {
                 castShadow
               />
 
-              <mesh
-                receiveShadow
-                castShadow={false}
-                rotation-x={-Math.PI / 2}
-                position={[0, -10, -1]}
-              >
-                <sphereGeometry args={[6.8, 100, 100]} />
-                <meshStandardMaterial opacity={0.5} color={"lightgreen"} />
-              </mesh>
+              <BeachBallModel />
 
               <PokemonGlbModel />
               <Sparkles
                 count={20}
-                scale={12}
+                scale={10}
                 size={10}
-                color={"pink"}
-                position={[0, 0, 0]}
+                color={"#fff568"}
+                position={[0, -5, 2]}
                 speed={2.5}
                 noise={1}
               />
@@ -77,7 +64,7 @@ const InfoSection = () => {
           </h.GlbWrapper>
         </h.InfoLeftSection>
 
-        <h.InfoMidSection>
+        <h.InfoMidSection className={scrollPosition > 230 ? "focused" : ""}>
           <h.InfoTitle>학력 / 경력</h.InfoTitle>
           <h.InfoBox>
             <h.InfoDate>2016. 03. ~ 2021. 02.</h.InfoDate>

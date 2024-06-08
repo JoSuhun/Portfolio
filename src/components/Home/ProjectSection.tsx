@@ -1,17 +1,42 @@
 import * as h from "../styles/Home";
-import { useAtomValue } from "jotai";
+import { useAtomValue, useSetAtom } from "jotai";
 import { modalOpenAtom } from "../../stores/ProjectModalAtom";
 import ProjectModal from "./ProjectModal";
 import ProjectItem from "./ProjectItem";
+import { ProjectsAtom } from "../../stores/NavAtom";
+import { useEffect, useRef, useState } from "react";
 
 const ProjectSection = () => {
   const isOpen = useAtomValue(modalOpenAtom);
+  const SetProjectsRef = useSetAtom(ProjectsAtom);
+  const Ref = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (Ref.current) {
+      SetProjectsRef(Ref.current);
+    }
+  }, [Ref, SetProjectsRef]);
+
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const updateScroll = () => {
+    setScrollPosition(window.scrollY || document.documentElement.scrollTop);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", updateScroll);
+    return () => {
+      window.removeEventListener("scroll", updateScroll);
+    };
+  }, []);
 
   return (
-    <h.Wrapper>
+    <h.Wrapper ref={Ref}>
       {isOpen ? <ProjectModal /> : null}
-      <p className="typing">Projects,</p>
-      <div className="title">저의 프로젝트를 소개합니다.</div>
+      <div className={scrollPosition > 1500 ? "header focused" : "header"}>
+        <p className="typing">Projects,</p>
+        <div className="title">저의 프로젝트를 소개합니다.</div>
+      </div>
       <h.ProjectContainer>
         <ProjectItem
           title="stellAR"

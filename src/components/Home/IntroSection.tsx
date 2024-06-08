@@ -2,10 +2,21 @@ import * as h from "../styles/Home";
 import { Canvas } from "@react-three/fiber";
 import TomatoGlbModel from "./TomatoGlbModel";
 import { OrbitControls } from "@react-three/drei";
+import { useSetAtom } from "jotai";
+import { IntroAtom } from "../../stores/NavAtom";
+import { useEffect, useRef } from "react";
 
 const IntroSection = () => {
+  const SetIntroRef = useSetAtom(IntroAtom);
+  const Ref = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    if (Ref.current) {
+      SetIntroRef(Ref.current);
+    }
+  }, [Ref, SetIntroRef]);
+
   return (
-    <h.Wrapper>
+    <h.Wrapper className="intro_wrapper" ref={Ref}>
       <h.IntroContainer>
         <section>
           <p className="typing">안녕하세요,</p>

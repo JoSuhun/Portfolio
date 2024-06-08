@@ -1,11 +1,42 @@
 import styled from "styled-components";
 
+export const HomeBackGround = styled.div`
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 240%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background-image: radial-gradient(#fefff6 50px, transparent 0);
+    background-size: 270px 270px;
+    background-position: 0 0;
+    transform: rotate(45deg);
+    z-index: -1;
+  }
+`;
+
 export const Wrapper = styled.div`
   min-height: 65vh;
   width: 80vw;
-  margin: 15vh 10vw;
+  padding: 10vh 10vw;
   position: relative;
   font-family: Galmuri11;
+
+  .header {
+    transform: translateY(50%);
+    transition: all 400ms ease-in-out;
+    opacity: 0;
+    &.focused {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+  }
 
   .typing {
     margin-bottom: 10px;
@@ -117,6 +148,13 @@ export const InfoLeftSection = styled.section`
 export const InfoMidSection = styled.section`
   /* width: 50vw; */
   margin-right: 20px;
+  transform: translateX(200%);
+  transition: all 900ms ease-in-out;
+  opacity: 0;
+  &.focused {
+    transform: translateX(0%);
+    opacity: 1;
+  }
 `;
 
 export const InfoBox = styled.div`
