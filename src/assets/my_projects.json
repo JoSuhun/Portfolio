@@ -22,7 +22,7 @@
       "vite",
       "React",
       "zustand",
-      "react-query",
+      "react query",
       "Three.js",
       "PWA"
     ],

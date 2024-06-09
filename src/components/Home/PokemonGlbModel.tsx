@@ -41,9 +41,9 @@ const PokemonGlbModel = () => {
   return (
     <primitive
       ref={ref}
-      scale={4}
+      scale={3}
       object={scene}
-      position-y={-3.3}
+      position-y={1}
       onClick={handleClick}
       onPointerOver={handlePointerOver}
       onPointerOut={handlePointerOut}

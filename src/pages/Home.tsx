@@ -10,13 +10,13 @@ const Home = () => {
   return (
     <>
       <Nav />
-      <h.HomeBackGround>
+      <h.HomeBackGround className="home_bg">
         <IntroSection />
         <InfoSection />
         <SkillSection />
         <ProjectSection />
+        <Footer />
       </h.HomeBackGround>
-      <Footer />
     </>
   );
 };

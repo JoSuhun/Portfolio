@@ -20,7 +20,7 @@ export const ModalCard = styled.div`
   transform: translate(-50%, -50%);
   height: 70vh;
   overflow: auto;
-  width: 60vw;
+  width: 65vw;
   padding: 3%;
   background-color: #ffffffee;
   border-radius: 10px;
@@ -36,6 +36,19 @@ export const ModalCard = styled.div`
     margin-bottom: 15px;
     border-bottom: 1px solid black;
   }
+  @media (max-width: 992px) {
+    width: 75vw;
+  }
+  @media (max-width: 600px) {
+    height: 50vh;
+    padding: 20px 10px;
+    .title {
+      font-size: 1.3rem;
+    }
+    .summary {
+      font-size: 0.9rem;
+    }
+  }
 `;
 
 export const Link = styled.div`
@@ -49,6 +62,7 @@ export const Link = styled.div`
   }
   span {
     position: absolute;
+
     font-family: Galmuri11;
     font-size: 0.8rem;
     color: white;
@@ -96,6 +110,18 @@ export const Link = styled.div`
       display: block;
     }
   }
+  @media (max-width: 600px) {
+    .go_github {
+      &:hover span {
+        display: none;
+      }
+    }
+    .go_notion {
+      &:hover span {
+        display: none;
+      }
+    }
+  }
 `;
 
 export const ProjectInfoBox = styled.div`
@@ -105,6 +131,12 @@ export const ProjectInfoBox = styled.div`
   font-family: Pretendard;
   background-color: var(--card-background);
   border-radius: 10px;
+  .skill_box {
+    /* width: 100%; */
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
   p {
     padding-left: 7px;
   }
@@ -125,6 +157,7 @@ export const InfoTitle = styled.p`
 export const ProjectSkillItem = styled.span`
   margin: 5px;
   padding: 5px 10px;
+  min-width: max-content;
   border-radius: 5px;
   background-color: #ffffff;
   font-family: Galmuri11;
@@ -144,6 +177,12 @@ export const ProjectImage = styled.div`
   border-radius: 10px;
   img {
     margin-right: 10px;
+  }
+  @media (max-width: 992px) {
+    height: 40%;
+  }
+  @media (max-width: 600px) {
+    height: 40%;
   }
 `;
 

@@ -37,7 +37,7 @@ const SkillSection = () => {
 
   return (
     <h.Wrapper ref={Ref}>
-      <div className={scrollPosition > 900 ? "header focused" : "header"}>
+      <div className={scrollPosition > 800 ? "header focused" : "header"}>
         <p className="typing">Skills,</p>
         <div className="title">이러한 기술을 갖추고 있어요.</div>
       </div>

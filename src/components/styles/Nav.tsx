@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const NavWrapper = styled.div`
   width: 100vw;
-  height: 5vh;
+  height: 35px;
   position: fixed;
   display: flex;
   align-items: center;
@@ -12,24 +12,37 @@ export const NavWrapper = styled.div`
   left: 0;
   background-color: var(--color-red);
   font-family: Galmuri11;
+  @media (max-width: 600px) {
+    height: 25px;
+  }
 `;
 
 export const NavBtnBox = styled.div`
   display: flex;
   justify-content: space-between;
-  padding-right: 3%;
-  width: 20vw;
+  padding-right: 2%;
+  width: 300px;
+  @media (max-width: 600px) {
+    width: 230px;
+  }
 `;
 
 export const NavBtn = styled.div`
   cursor: pointer;
   font-family: Galmuri11-Bold;
+
   &:hover {
     transform: translateY(-3%);
   }
   &.focused {
     color: #ececec;
     text-shadow: 2px 2px var(--color-grey);
+    background-color: var(--color-green);
+    padding: 0 3%;
+    border-radius: 50px;
+  }
+  @media (max-width: 600px) {
+    font-size: 0.8rem;
   }
 `;
 

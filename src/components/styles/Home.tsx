@@ -6,23 +6,53 @@ export const HomeBackGround = styled.div`
   width: 100%;
   height: 100%;
 
-  &::before {
-    position: absolute;
-    content: "";
-    width: 240%;
-    height: 200%;
-    top: -50%;
-    left: -50%;
-    background-image: radial-gradient(#fefff6 50px, transparent 0);
-    background-size: 270px 270px;
-    background-position: 0 0;
-    transform: rotate(45deg);
-    z-index: -1;
+  &.home_bg {
+    &::before {
+      position: absolute;
+      content: "";
+      width: 300%;
+      height: 300%;
+      top: -100%;
+      left: -100%;
+      transform: translate(-100% -100%);
+      background-image: radial-gradient(#fefff6 50px, transparent 0);
+      background-size: 270px 270px;
+      background-position: 0 0;
+      transform: rotate(45deg);
+      z-index: -1;
+    }
+  }
+
+  @media (max-width: 870px) {
+    &.home_bg {
+      &::before {
+        width: 350%;
+        background-image: radial-gradient(#fefff6 45px, transparent 0);
+        background-size: 250px 250px;
+        background-position: 0 0;
+        transform: rotate(45deg);
+        z-index: -1;
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    &.home_bg {
+      &::before {
+        width: 500%;
+        top: -110%;
+        left: -110%;
+        background-image: radial-gradient(#fefff6 45px, transparent 0);
+        background-size: 250px 250px;
+        background-position: 0 0;
+        transform: rotate(45deg);
+        z-index: -1;
+      }
+    }
   }
 `;
 
 export const Wrapper = styled.div`
-  min-height: 65vh;
+  /* height: 65vh; */
   width: 80vw;
   padding: 10vh 10vw;
   position: relative;
@@ -51,26 +81,127 @@ export const Wrapper = styled.div`
   }
   .title-expand {
     font-family: Pretendard-ExtraLight;
+    display: flex;
     padding-top: 10px;
     font-size: 1.6rem;
     :nth-child(2) {
       text-decoration: var(--color-green) wavy underline;
     }
   }
+
+  @media (max-width: 1400px) {
+    .typing {
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+      white-space: nowrap;
+    }
+
+    .title {
+      font-size: 1.9rem;
+    }
+    .title-expand {
+      padding-top: 10px;
+      font-size: 1.4rem;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .typing {
+      margin-bottom: 8px;
+      font-size: 1.4rem;
+    }
+
+    .title {
+      font-size: 1.8rem;
+    }
+    .title-expand {
+      padding-top: 8px;
+      font-size: 1.2rem;
+    }
+  }
+  @media (max-width: 992px) {
+    .typing {
+      margin-bottom: 6px;
+      font-size: 1.3rem;
+    }
+
+    .title {
+      font-size: 1.6rem;
+    }
+    .title-expand {
+      padding-top: 6px;
+      font-size: 1.2rem;
+      display: block;
+    }
+  }
+  @media (max-width: 900px) {
+    .typing {
+      margin-bottom: 5px;
+      font-size: 1.2rem;
+    }
+
+    .title {
+      font-size: 1.5rem;
+    }
+    .title-expand {
+      padding-top: 4px;
+      font-size: 1.1rem;
+    }
+  }
+  @media (max-width: 768px) {
+    .typing {
+      margin-bottom: 5px;
+      font-size: 1rem;
+    }
+    .title {
+      font-size: 1.4rem;
+    }
+  }
+  @media (max-width: 600px) {
+    width: 90vw;
+    padding: 10vh 5vw;
+    .typing {
+      margin-bottom: 5px;
+      font-size: 1rem;
+    }
+    .title {
+      font-size: 1.2rem;
+    }
+  }
 `;
 
 // GlbSection
 export const GlbWrapper = styled.div`
-  height: 60vh;
+  height: 500px;
+  width: 35vw;
   background-color: transparent;
   overflow: visible;
+  @media (max-width: 1400px) {
+    height: 500px;
+  }
+  @media (max-width: 1300px) {
+    height: 450px;
+  }
+  @media (max-width: 1200px) {
+    height: 400px;
+  }
+  @media (max-width: 992px) {
+    height: 350px;
+  }
+  @media (max-width: 900px) {
+    height: 300px;
+    width: 30vw;
+  }
+  @media (max-width: 768px) {
+    height: 250px;
+  }
 `;
 
 // IntroSection
 export const IntroContainer = styled.div`
   padding-top: 15vh;
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
+  display: flex;
+  justify-content: space-between;
   position: relative;
 
   .content {
@@ -79,6 +210,7 @@ export const IntroContainer = styled.div`
     p {
       font-size: 1.5rem;
       padding-bottom: 7px;
+      white-space: nowrap;
     }
     span {
       background: linear-gradient(
@@ -88,17 +220,67 @@ export const IntroContainer = styled.div`
       );
     }
   }
+  @media (max-width: 1400px) {
+    &.intro_container {
+    }
+    .content {
+      padding-top: 60px;
+      p {
+        font-size: 1.2rem;
+        padding-bottom: 7px;
+      }
+    }
+  }
+  @media (max-width: 992px) {
+    padding-top: 13vh;
+    .content {
+      padding-top: 50px;
+      p {
+        font-size: 1.1rem;
+      }
+    }
+  }
+  @media (max-width: 900px) {
+    &.intro_container {
+    }
+    .content {
+      padding-top: 50px;
+      p {
+        font-size: 1rem;
+        padding-bottom: 6px;
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    padding-top: 5vh;
+    &.intro_container {
+      padding-top: 0;
+      display: flex;
+      flex-direction: column;
+      :nth-child(1) {
+        order: 2;
+        width: 100%;
+      }
+      :nth-child(2) {
+        order: 1;
+      }
+    }
+    .content {
+      padding-top: 30px;
+      p {
+        font-size: 0.9rem;
+      }
+    }
+  }
 `;
 
 // InfoSection
 
 export const InfoContainer = styled.div`
-  height: 100%;
   width: 100%;
   overflow: hidden;
-  /* display: flex; */
-  display: grid;
-  grid-template-columns: 0.7fr 1.3fr;
+  display: flex;
   transform: translateX(0);
   transition: all 500ms ease-in-out;
 
@@ -109,40 +291,27 @@ export const InfoContainer = styled.div`
     }
   }
 
-  section {
-    padding: 10% 0;
+  @media (max-width: 992px) {
   }
-
-  hr {
-    display: block;
-    position: absolute;
-    border-top: 1px solid transparent;
-    z-index: -1;
-    left: 0px;
-  }
-  hr.right {
-    left: auto;
-    right: 0px;
-  }
-
-  hr.line {
-    border-color: var(--color-green);
-    width: 100%;
-    animation: thread2 1700ms ease-in-out;
-  }
-
-  @keyframes thread2 {
-    0% {
-      width: 0%;
-    }
-    100% {
-      width: 100%;
-    }
+  @media (max-width: 786px) {
+    display: flex;
+    flex-direction: column;
   }
 `;
 
 export const InfoLeftSection = styled.section`
   /* width: 20vw; */
+  width: 30%;
+  @media (max-width: 992px) {
+    width: 40%;
+  }
+  @media (max-width: 786px) {
+    width: 100%;
+    height: 50dvh;
+  }
+  @media (max-width: 600px) {
+    /* height: 80%; */
+  }
 `;
 
 export const InfoMidSection = styled.section`
@@ -182,9 +351,27 @@ export const InfoBox = styled.div`
   &:hover {
     transform: translateY(-5%);
   }
-  /* &.ssafy {
-    background-color: #fad975;
-  } */
+  @media (max-width: 1200px) {
+    margin-bottom: 15px;
+    padding: 15px;
+    grid-template-columns: 0.5fr 1fr;
+
+    p {
+      font-size: 1rem;
+    }
+  }
+  @media (max-width: 992px) {
+    margin-bottom: 12px;
+    padding: 12px;
+    p {
+      font-size: 0.9rem;
+    }
+  }
+  @media (max-width: 786px) {
+    p {
+      font-size: 0.8rem;
+    }
+  }
 `;
 
 export const InfoTitle = styled.p`
@@ -192,6 +379,9 @@ export const InfoTitle = styled.p`
   margin-left: 5px;
   margin-bottom: 5px;
   font-family: Galmuri11-Bold;
+  @media (max-width: 786px) {
+    font-size: 0.9rem;
+  }
 `;
 
 export const InfoDate = styled.p``;
@@ -214,12 +404,16 @@ export const SkillContainer = styled.div`
     "competent beginner";
   gap: 20px;
   overflow: visible;
+  @media (max-width: 992px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export const SkillBox = styled.div<{ point: string }>`
   display: flex;
   position: relative;
-  padding: 20px;
+  padding: 25px;
   /* margin: 10px; */
   flex-direction: column;
   /* justify-content: center; */
@@ -287,6 +481,7 @@ export const SkillBox = styled.div<{ point: string }>`
     grid-area: beginner;
     .beginner_ex {
       bottom: -60px;
+
       right: 0;
       &::after {
         content: "";
@@ -304,6 +499,49 @@ export const SkillBox = styled.div<{ point: string }>`
       display: block;
     }
   }
+  @media (max-width: 992px) {
+    .ex {
+      display: block;
+      background-color: transparent;
+      min-width: 100%;
+      font-family: Galmuri11;
+      color: darkslategray;
+      font-size: 0.8rem;
+      &.competent_ex {
+        top: unset;
+        left: unset;
+        right: 0;
+        bottom: -5px;
+
+        min-width: max-content;
+        &::after {
+          border: 0px solid transparent;
+        }
+      }
+      &.advanced_ex {
+        top: unset;
+        left: unset;
+        right: 0;
+        bottom: -5px;
+
+        min-width: max-content;
+        &::after {
+          border: 0px solid transparent;
+        }
+      }
+      &.beginner_ex {
+        top: unset;
+        left: unset;
+        right: 0;
+        bottom: -5px;
+
+        min-width: max-content;
+        &::after {
+          border: 0px solid transparent;
+        }
+      }
+    }
+  }
 `;
 
 export const SkillLevel = styled.p`
@@ -313,7 +551,12 @@ export const SkillLevel = styled.p`
   margin-bottom: 5px;
   font-size: 1.1rem;
   align-self: start;
-  /* width: 100%; */
+  @media (max-width: 992px) {
+    font-size: 1rem;
+  }
+  @media (max-width: 786px) {
+    font-size: 0.9rem;
+  }
 `;
 
 export const SkillItem = styled.div`
@@ -336,6 +579,16 @@ export const SkillItem = styled.div`
   div {
     margin-left: 20px;
   }
+  @media (max-width: 1200px) {
+    div p {
+      font-size: 1rem;
+    }
+  }
+  @media (max-width: 992px) {
+    img {
+      height: 30px;
+    }
+  }
 `;
 
 export const Additional = styled.div`
@@ -344,8 +597,11 @@ export const Additional = styled.div`
   padding: 10px;
   min-width: 100px;
   color: var(--color-grey);
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-family: Pretendard;
+  @media (max-width: 992px) {
+    font-size: 0.8rem;
+  }
 `;
 
 // ProjectSection
@@ -356,6 +612,10 @@ export const ProjectContainer = styled.div`
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
   align-items: center;
+  @media (max-width: 992px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export const ProjectItem = styled.div`
@@ -375,6 +635,14 @@ export const ProjectItem = styled.div`
         opacity: 0;
       }
     }
+  }
+  @media (max-width: 992px) {
+    display: flex;
+  }
+  @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 `;
 
@@ -397,6 +665,12 @@ export const ProjectThumbnail = styled.div`
   img {
     width: 100%;
   }
+  @media (max-width: 992px) {
+    width: 40%;
+  }
+  @media (max-width: 600px) {
+    width: 90%;
+  }
 `;
 
 export const ProjectContent = styled.div`
@@ -410,5 +684,24 @@ export const ProjectContent = styled.div`
   p {
     font-size: 0.9rem;
     margin-top: 5px;
+  }
+  @media (max-width: 1200px) {
+    p {
+      font-size: 0.8rem;
+    }
+  }
+  @media (max-width: 992px) {
+    padding-left: 10%;
+    margin-top: 0px;
+    padding-top: 0px;
+    p {
+      font-size: 0.9rem;
+    }
+  }
+  @media (max-width: 786px) {
+    padding-left: 5%;
+    p {
+      font-size: 0.8rem;
+    }
   }
 `;

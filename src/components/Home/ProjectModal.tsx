@@ -43,14 +43,14 @@ const ProjectModal = () => {
             <m.Link>
               <div className="go_github">
                 <span>Go Github</span>
-                <a href={projectInfo?.link.github}>
+                <a href={projectInfo?.link.github} target="_blank">
                   <img src={github_icon} alt="go_github" />
                 </a>
               </div>
               <div className="go_notion">
                 <span>Go Notion</span>
 
-                <a href={projectInfo?.link.notion}>
+                <a href={projectInfo?.link.notion} target="_blank">
                   <img src={notion_icon} alt="go_notion" />
                 </a>
               </div>
@@ -74,9 +74,11 @@ const ProjectModal = () => {
               <img src={skill_icon} alt="skill_icon" />
               FE 사용한 기술스택
             </m.InfoTitle>
-            {projectInfo?.skill.map((item, idx) => (
-              <m.ProjectSkillItem key={idx}>{item}</m.ProjectSkillItem>
-            ))}
+            <div className="skill_box">
+              {projectInfo?.skill.map((item, idx) => (
+                <m.ProjectSkillItem key={idx}>{item}</m.ProjectSkillItem>
+              ))}
+            </div>
           </m.ProjectInfoBox>
 
           <m.ProjectImage>

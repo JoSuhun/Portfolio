@@ -17,15 +17,19 @@ const IntroSection = () => {
 
   return (
     <h.Wrapper className="intro_wrapper" ref={Ref}>
-      <h.IntroContainer>
+      <h.IntroContainer className="intro_container">
         <section>
           <p className="typing">안녕하세요,</p>
           <div className="title">
             Front-end Developer
             <p>생각이 많은 개발자 조수훈입니다.</p>
             <p className="title-expand">
-              <span>'지식'만 많은 사람</span>보다,{" "}
-              <span>'생각'도 많은 사람</span>이 되고 싶습니다.
+              <p>
+                <span>'지식'만 많은 사람</span>보다,{" "}
+              </p>
+              <p>
+                <span>'생각'도 많은 사람</span>이 되고 싶습니다.
+              </p>
             </p>
           </div>
 
@@ -45,13 +49,12 @@ const IntroSection = () => {
         </section>
 
         <section>
-          <h.GlbWrapper>
+          <h.GlbWrapper className="glb_section">
             <Canvas
               gl={{ antialias: true }}
               shadows={"soft"}
               camera={{
                 fov: 60,
-                // aspect: window.innerWidth / window.innerHeight,
                 near: 0.1,
                 far: 100,
                 position: [5, 5, 8],

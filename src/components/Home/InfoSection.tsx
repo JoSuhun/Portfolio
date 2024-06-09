@@ -22,49 +22,49 @@ const InfoSection = () => {
   return (
     <h.Wrapper>
       <h.InfoContainer>
-        <h.InfoLeftSection className="glb_section">
-          <h.GlbWrapper>
-            <Canvas
-              gl={{ antialias: true }}
-              dpr={[1, 2]}
-              shadows={"soft"}
-              camera={{
-                fov: 60,
-                near: 0.1,
-                far: 100,
-                position: [-3, 3, 10],
-              }}
-            >
-              <OrbitControls enableZoom={false} />
-              <directionalLight
-                intensity={1}
-                position={[3, 5, 10]}
-                color={"yellow"}
-              />
-              <directionalLight intensity={1} position={[-10, 7, 10]} />
-              <directionalLight
-                intensity={0.7}
-                position={[10, 10, 10]}
-                castShadow
-              />
+        <h.InfoLeftSection className="pokemon_section">
+          {/* <h.GlbWrapper> */}
+          <Canvas
+            gl={{ antialias: true }}
+            dpr={[1, 2]}
+            shadows={"soft"}
+            camera={{
+              fov: 60,
+              near: 0.1,
+              far: 100,
+              position: [-3, 3, 10],
+            }}
+          >
+            <OrbitControls enableZoom={false} />
+            <directionalLight
+              intensity={1}
+              position={[3, 5, 10]}
+              color={"yellow"}
+            />
+            <directionalLight intensity={1} position={[-10, 7, 10]} />
+            <directionalLight
+              intensity={0.7}
+              position={[10, 10, 10]}
+              castShadow
+            />
 
-              <BeachBallModel />
+            <BeachBallModel />
 
-              <PokemonGlbModel />
-              <Sparkles
-                count={20}
-                scale={10}
-                size={10}
-                color={"#fff568"}
-                position={[0, -5, 2]}
-                speed={2.5}
-                noise={1}
-              />
-            </Canvas>
-          </h.GlbWrapper>
+            <PokemonGlbModel />
+            <Sparkles
+              count={20}
+              scale={10}
+              size={10}
+              color={"#fff568"}
+              position={[0, -5, 2]}
+              speed={2.5}
+              noise={1}
+            />
+          </Canvas>
+          {/* </h.GlbWrapper> */}
         </h.InfoLeftSection>
 
-        <h.InfoMidSection className={scrollPosition > 230 ? "focused" : ""}>
+        <h.InfoMidSection className={scrollPosition > 70 ? "focused" : ""}>
           <h.InfoTitle>학력 / 경력</h.InfoTitle>
           <h.InfoBox>
             <h.InfoDate>2016. 03. ~ 2021. 02.</h.InfoDate>
