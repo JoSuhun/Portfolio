@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, useEffect, useState } from "react";
+import { Suspense, lazy, useEffect, useState } from "react";
 import Nav from "../components/common/Nav";
 import InfoSection from "../components/Home/InfoSection";
 import SkillSection from "../components/Home/SkillSection";
