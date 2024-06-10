@@ -23,14 +23,14 @@ const IntroSection = () => {
           <div className="title">
             Front-end Developer
             <p>생각이 많은 개발자 조수훈입니다.</p>
-            <p className="title-expand">
+            <div className="title-expand">
               <p>
                 <span>'지식'만 많은 사람</span>보다,{" "}
               </p>
               <p>
                 <span>'생각'도 많은 사람</span>이 되고 싶습니다.
               </p>
-            </p>
+            </div>
           </div>
 
           <div className="content">
