@@ -32,14 +32,15 @@ const Home = () => {
   return (
     <>
       <Suspense fallback={<Loading progress={progress} />}>
-        <Nav />
+        <Loading progress={progress} />
+        {/* <Nav />
         <h.HomeBackGround className="home_bg">
           <IntroSection />
           <InfoSection />
           <SkillSection />
           <ProjectSection />
           <Footer />
-        </h.HomeBackGround>
+        </h.HomeBackGround> */}
       </Suspense>
       {progress === 100 && setIsIntroLoaded(true)}
     </>
