@@ -12,14 +12,22 @@ const IntroSection = lazy(() => import("../components/Home/IntroSection"));
 
 const Home = () => {
   const [progress, setProgress] = useState(0);
+  const [isIntroLoaded, setIsIntroLoaded] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setProgress((prev) => (prev < 100 ? prev + 10 : 100));
+      setProgress((prev) => (prev < 90 ? prev + 10 : prev));
     }, 500);
 
     return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    if (isIntroLoaded) {
+      setProgress(100);
+    }
+  }, [isIntroLoaded]);
+
   return (
     <>
       <Suspense fallback={<Loading progress={progress} />}>
@@ -32,6 +40,7 @@ const Home = () => {
           <Footer />
         </h.HomeBackGround>
       </Suspense>
+      {progress === 100 && setIsIntroLoaded(true)}
     </>
   );
 };
