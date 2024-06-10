@@ -5,7 +5,7 @@ import ProjectSection from "../components/Home/ProjectSection";
 import Footer from "../components/common/Footer";
 import * as h from "../components/styles/Home";
 import { Suspense, lazy, useEffect, useState } from "react";
-import Loading from "./Loading";
+import Loading from "../components/common/Loading";
 
 const IntroSection = lazy(() => import("../components/Home/IntroSection"));
 
@@ -18,7 +18,7 @@ const Home = () => {
       setProgress((prev) =>
         prev < 90 ? prev + 10 : prev >= 90 && prev < 99 ? prev + 3 : prev
       );
-    }, 500);
+    }, 600);
 
     return () => clearInterval(interval);
   }, []);
@@ -32,6 +32,7 @@ const Home = () => {
   return (
     <>
       <Suspense fallback={<Loading progress={progress} />}>
+        <Loading progress={progress} />
         <Nav />
         <h.HomeBackGround className="home_bg">
           <IntroSection />

@@ -71,6 +71,7 @@ export const GlobalStyle = createGlobalStyle`
             top: 0;
             left: 0;
             position: absolute;
+            z-index: -2;
             background-image:url('/img/background_paper.jpg');
             background-size: cover;
             opacity: 0.5;

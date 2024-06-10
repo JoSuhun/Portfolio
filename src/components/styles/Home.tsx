@@ -19,7 +19,7 @@ export const HomeBackGround = styled.div`
       background-size: 270px 270px;
       background-position: 0 0;
       transform: rotate(45deg);
-      z-index: -1;
+      z-index: -3;
     }
   }
 
