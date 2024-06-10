@@ -1,5 +1,8 @@
+import { useProgress } from "@react-three/drei";
+
 const Loading = () => {
-  return <div>Loading</div>;
+  const { progress } = useProgress();
+  return <div>{progress.toFixed(2)} % loaded</div>;
 };
 
 export default Loading;
