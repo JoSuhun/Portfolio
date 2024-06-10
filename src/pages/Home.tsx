@@ -32,7 +32,6 @@ const Home = () => {
   return (
     <>
       <Suspense fallback={<Loading progress={progress} />}>
-        <Loading progress={progress} />
         <Nav />
         <h.HomeBackGround className="home_bg">
           <IntroSection />
