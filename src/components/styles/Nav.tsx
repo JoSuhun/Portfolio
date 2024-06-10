@@ -23,7 +23,7 @@ export const NavBtnBox = styled.div`
   padding-right: 2%;
   width: 300px;
   @media (max-width: 600px) {
-    width: 20px;
+    width: 220px;
   }
 `;
 

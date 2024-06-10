@@ -18,7 +18,7 @@ const Home = () => {
       setProgress((prev) =>
         prev < 90 ? prev + 10 : prev >= 90 && prev < 99 ? prev + 3 : prev
       );
-    }, 600);
+    }, 500);
 
     return () => clearInterval(interval);
   }, []);
@@ -31,23 +31,17 @@ const Home = () => {
 
   return (
     <>
-      {progress === 0 ? (
-        <Loading progress={progress} />
-      ) : (
-        <>
-          <Suspense fallback={<Loading progress={progress} />}>
-            <Nav />
-            <h.HomeBackGround className="home_bg">
-              <IntroSection />
-              <InfoSection />
-              <SkillSection />
-              <ProjectSection />
-              <Footer />
-            </h.HomeBackGround>
-          </Suspense>
-          {progress === 100 && setIsIntroLoaded(true)}
-        </>
-      )}
+      <Suspense fallback={<Loading progress={progress} />}>
+        <Nav />
+        <h.HomeBackGround className="home_bg">
+          <IntroSection />
+          <InfoSection />
+          <SkillSection />
+          <ProjectSection />
+          <Footer />
+        </h.HomeBackGround>
+      </Suspense>
+      {progress === 100 && setIsIntroLoaded(true)}
     </>
   );
 };
