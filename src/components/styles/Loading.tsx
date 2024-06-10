@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const LoadingWrapper = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   position: relative;
   display: flex;
   justify-content: center;

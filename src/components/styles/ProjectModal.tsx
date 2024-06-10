@@ -7,7 +7,7 @@ export const ModalWrapper = styled.div`
     left: 0;
     z-index: 990;
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     backdrop-filter: blur(3px);
   }
 `;

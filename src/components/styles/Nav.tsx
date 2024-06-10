@@ -53,7 +53,7 @@ export const NavContainer = styled.div`
   position: fixed;
   z-index: 1;
   right: 0;
-  height: 100vh;
+  height: 100dvh;
   width: 30vw;
   transform: translateY(-100%);
   opacity: 0;
