@@ -1,8 +1,9 @@
-import { useProgress } from "@react-three/drei";
+type Props = {
+  progress: number;
+};
 
-const Loading = () => {
-  const { progress } = useProgress();
-  return <div>{progress.toFixed(2)} % loaded</div>;
+const Loading = ({ progress }: Props) => {
+  return <div>{progress} % loaded</div>;
 };
 
 export default Loading;
