@@ -1,4 +1,5 @@
 import Nav from "../components/common/Nav";
+import InfoSection from "../components/Home/InfoSection";
 import SkillSection from "../components/Home/SkillSection";
 import ProjectSection from "../components/Home/ProjectSection";
 import Footer from "../components/common/Footer";
@@ -7,7 +8,7 @@ import { Suspense, lazy } from "react";
 import Loading from "./Loading";
 
 const IntroSection = lazy(() => import("../components/Home/IntroSection"));
-const InfoSection = lazy(() => import("../components/Home/InfoSection"));
+// const InfoSection = lazy(() => import("../components/Home/InfoSection"));
 
 const Home = () => {
   return (
