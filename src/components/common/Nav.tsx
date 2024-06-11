@@ -29,7 +29,7 @@ const Nav = () => {
 
   return (
     <>
-      <n.NavWrapper>
+      <n.NavWrapper className={scrollPosition > 100 ? "scroll_down" : ""}>
         <n.NavBtnBox>
           <n.NavBtn
             className={scrollPosition < 1000 ? "focused" : ""}
@@ -37,6 +37,21 @@ const Nav = () => {
           >
             안녕하세요?
           </n.NavBtn>
+          <svg
+            className="line"
+            width="70"
+            height="2"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <line
+              x1="1"
+              y1="0"
+              x2="70"
+              y2="0"
+              stroke="black"
+              stroke-width="2"
+            />
+          </svg>
           <n.NavBtn
             className={
               scrollPosition >= 1000 && scrollPosition < 1800 ? "focused" : ""
@@ -45,6 +60,21 @@ const Nav = () => {
           >
             Skills
           </n.NavBtn>
+          <svg
+            className="line"
+            width="70"
+            height="2"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <line
+              x1="1"
+              y1="0"
+              x2="70"
+              y2="0"
+              stroke="black"
+              stroke-width="2"
+            />
+          </svg>
           <n.NavBtn
             className={scrollPosition >= 1800 ? "focused" : ""}
             onClick={() => scrollToRef(ProjectsRef as HTMLDivElement)}

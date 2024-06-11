@@ -67,8 +67,8 @@ const InfoSection = () => {
               count={20}
               scale={10}
               size={10}
-              color={"#fff568"}
-              position={[0, -5, 2]}
+              color={"#feffcd"}
+              position={[0, 0, 2]}
               speed={2.5}
               noise={1}
             />

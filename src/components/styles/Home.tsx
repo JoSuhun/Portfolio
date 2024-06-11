@@ -287,6 +287,7 @@ export const InfoContainer = styled.div`
   width: 100%;
   overflow: visible;
   display: flex;
+  justify-content: space-around;
   transform: translateX(0);
   transition: all 500ms ease-in-out;
 
@@ -329,14 +330,14 @@ export const InfoLeftSection = styled.section`
     top: -230px;
     color: #ffffff;
     letter-spacing: 1px;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     background-color: #41414a;
     padding: 5px 10px;
     border-radius: 5px;
     &::after {
       content: "";
       position: absolute;
-      bottom: -14px;
+      bottom: -13px;
       left: 10%;
       border: 7px solid transparent;
       border-top-color: #41414a;
@@ -541,12 +542,12 @@ export const SkillBox = styled.div<{ point: string }>`
       min-width: 100%;
       font-family: Galmuri11;
       color: darkslategray;
-      font-size: 0.8rem;
+      font-size: 0.7rem;
       &.competent_ex {
         top: unset;
         left: unset;
         right: 0;
-        bottom: -5px;
+        bottom: -7px;
 
         min-width: max-content;
         &::after {
@@ -557,7 +558,7 @@ export const SkillBox = styled.div<{ point: string }>`
         top: unset;
         left: unset;
         right: 0;
-        bottom: -5px;
+        bottom: -7px;
 
         min-width: max-content;
         &::after {
@@ -568,7 +569,7 @@ export const SkillBox = styled.div<{ point: string }>`
         top: unset;
         left: unset;
         right: 0;
-        bottom: -5px;
+        bottom: -7px;
 
         min-width: max-content;
         &::after {
@@ -622,6 +623,14 @@ export const SkillItem = styled.div`
   @media (max-width: 992px) {
     img {
       height: 30px;
+    }
+  }
+  @media (max-width: 600px) {
+    .skill_text {
+      font-size: 0.8rem;
+    }
+    div p {
+      font-size: 0.9rem;
     }
   }
 `;
