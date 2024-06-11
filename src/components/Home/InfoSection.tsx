@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import * as h from "../styles/Home";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Sparkles } from "@react-three/drei";
+import { Html, OrbitControls, Sparkles } from "@react-three/drei";
 import PokemonGlbModel from "./PokemonGlbModel";
 import BeachBallModel from "./BeachBallModel";
 
 const InfoSection = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [pikaClicked, setPikaClicked] = useState(false);
 
   const updateScroll = () => {
     setScrollPosition(window.scrollY || document.documentElement.scrollTop);
@@ -23,8 +24,8 @@ const InfoSection = () => {
     <h.Wrapper>
       <h.InfoContainer>
         <h.InfoLeftSection className="pokemon_section">
-          {/* <h.GlbWrapper> */}
           <Canvas
+            style={{ overflow: "visible" }}
             gl={{ antialias: true }}
             dpr={[1, 2]}
             shadows={"soft"}
@@ -32,10 +33,10 @@ const InfoSection = () => {
               fov: 60,
               near: 0.1,
               far: 100,
-              position: [-3, 3, 10],
+              position: [-3, 7, 8],
             }}
           >
-            <OrbitControls enableZoom={false} />
+            <OrbitControls enableZoom={false} enableRotate={false} />
             <directionalLight
               intensity={1}
               position={[3, 5, 10]}
@@ -48,9 +49,20 @@ const InfoSection = () => {
               castShadow
             />
 
+            <Html zIndexRange={[1, 1]}>
+              {!pikaClicked ? (
+                <div className="pika_tooltip">우리 춤 출까요?</div>
+              ) : (
+                <div className="pika_tooltip">Feel the beat!</div>
+              )}
+            </Html>
+
             <BeachBallModel />
 
-            <PokemonGlbModel />
+            <PokemonGlbModel
+              pikaClicked={pikaClicked}
+              setPikaClicked={setPikaClicked}
+            />
             <Sparkles
               count={20}
               scale={10}
@@ -61,7 +73,6 @@ const InfoSection = () => {
               noise={1}
             />
           </Canvas>
-          {/* </h.GlbWrapper> */}
         </h.InfoLeftSection>
 
         <h.InfoMidSection className={scrollPosition > 70 ? "focused" : ""}>

@@ -152,6 +152,7 @@ export const InfoTitle = styled.p`
   display: flex;
   margin-bottom: 5px;
   font-family: Pretendard-Bold;
+  font-size: 1rem;
 `;
 
 export const ProjectSkillItem = styled.span`
@@ -160,7 +161,9 @@ export const ProjectSkillItem = styled.span`
   min-width: max-content;
   border-radius: 5px;
   background-color: #ffffff;
-  font-family: Galmuri11;
+  font-family: Galmuri11-Bold;
+  letter-spacing: 1px;
+
   font-size: 0.7rem;
   box-shadow: var(--card-shadow);
 `;
@@ -190,15 +193,19 @@ export const TaskItem = styled.p`
   font-family: Pretendard-Bold;
   margin-bottom: 0;
   text-indent: 10px;
+  font-size: 1.05rem;
 
   &.list_child {
-    font-family: Pretendard;
+    font-family: Pretendard-Light;
     text-indent: 20px;
+    font-size: 1rem;
+    margin: 3px 0;
   }
   &:nth-last-child(1) {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
+
   &:first-child {
-    margin-top: 5px;
+    margin: 5px 0;
   }
 `;

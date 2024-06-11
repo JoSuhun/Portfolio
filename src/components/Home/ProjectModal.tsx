@@ -98,7 +98,7 @@ const ProjectModal = () => {
                   <m.TaskItem> • {item[0]}</m.TaskItem>
                   {item.slice(1, item.length).map((i, idx) => (
                     <m.TaskItem key={idx} className="list_child">
-                      {i}
+                      - {i}
                     </m.TaskItem>
                   ))}
                 </div>

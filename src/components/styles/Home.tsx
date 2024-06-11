@@ -10,42 +10,48 @@ export const HomeBackGround = styled.div`
     &::before {
       position: absolute;
       content: "";
-      width: 300%;
-      height: 300%;
-      top: -100%;
-      left: -100%;
-      transform: translate(-100% -100%);
+      width: 600%;
+      height: 600%;
+      transform: rotate(-45deg);
       background-image: radial-gradient(#fefff6 50px, transparent 0);
-      background-size: 270px 270px;
-      background-position: 0 0;
-      transform: rotate(45deg);
+      background-size: 250px 250px;
+      background-position: center center;
+      transform-origin: center center;
+      top: -2000px;
+      left: 1500px;
       z-index: -3;
+    }
+  }
+  @media (max-width: 992px) {
+    &.home_bg {
+      &::before {
+        top: -2500px;
+        left: 2500px;
+        z-index: -3;
+      }
     }
   }
 
   @media (max-width: 870px) {
     &.home_bg {
       &::before {
-        width: 350%;
         background-image: radial-gradient(#fefff6 45px, transparent 0);
         background-size: 250px 250px;
-        background-position: 0 0;
-        transform: rotate(45deg);
-        z-index: -1;
+        top: -3000px;
+        left: 4000px;
       }
     }
   }
-  @media (max-width: 768px) {
+
+  @media (max-width: 600px) {
     &.home_bg {
       &::before {
-        width: 500%;
-        top: -110%;
-        left: -110%;
-        background-image: radial-gradient(#fefff6 45px, transparent 0);
-        background-size: 250px 250px;
-        background-position: 0 0;
-        transform: rotate(45deg);
-        z-index: -1;
+        width: 700%;
+        height: 700%;
+        background-image: radial-gradient(#fefff6 30px, transparent 0);
+        background-size: 200px 200px;
+        top: -6500px;
+        left: 6000px;
       }
     }
   }
@@ -279,7 +285,7 @@ export const IntroContainer = styled.div`
 
 export const InfoContainer = styled.div`
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
   display: flex;
   transform: translateX(0);
   transition: all 500ms ease-in-out;
@@ -300,8 +306,9 @@ export const InfoContainer = styled.div`
 `;
 
 export const InfoLeftSection = styled.section`
-  /* width: 20vw; */
   width: 30%;
+  position: relative;
+  overflow: visible;
   @media (max-width: 992px) {
     width: 40%;
   }
@@ -311,6 +318,34 @@ export const InfoLeftSection = styled.section`
   }
   @media (max-width: 600px) {
     /* height: 80%; */
+  }
+  div {
+    overflow: visible;
+  }
+  .pika_tooltip {
+    position: absolute;
+    min-width: max-content;
+    z-index: 100;
+    top: -230px;
+    color: #ffffff;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    background-color: #41414a;
+    padding: 5px 10px;
+    border-radius: 5px;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -14px;
+      left: 10%;
+      border: 7px solid transparent;
+      border-top-color: #41414a;
+      rotate: 0deg;
+    }
+    @media (max-width: 600px) {
+      font-size: 0.8rem;
+      top: -220px;
+    }
   }
 `;
 

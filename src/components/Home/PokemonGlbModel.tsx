@@ -2,11 +2,16 @@ import { useEffect, useRef, useState } from "react";
 import { useAnimations, useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 
-const PokemonGlbModel = () => {
+type Props = {
+  pikaClicked: boolean;
+  setPikaClicked: (clicked: boolean) => void;
+};
+
+const PokemonGlbModel = ({ pikaClicked, setPikaClicked }: Props) => {
   const { scene, animations } = useGLTF("/img/pokemon.glb");
   const ref = useRef<THREE.Mesh>(null);
   const { actions } = useAnimations(animations, ref);
-  const [currentAction, setCurrentAction] = useState("Dance");
+  const [currentAction, setCurrentAction] = useState("Idle");
   scene.traverse((child) => {
     if (child) {
       child.castShadow = true;
@@ -26,8 +31,9 @@ const PokemonGlbModel = () => {
   }, [actions, currentAction]);
 
   const handleClick = () => {
-    const nextAction = currentAction === "Dance" ? "Idle" : "Dance";
+    const nextAction = currentAction === "Idle" ? "Dance" : "Idle";
     setCurrentAction(nextAction);
+    setPikaClicked(!pikaClicked);
   };
 
   const handlePointerOver = () => {
