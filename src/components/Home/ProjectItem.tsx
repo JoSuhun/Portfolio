@@ -1,6 +1,4 @@
-import * as h from "../styles/Home";
-// import { useAtom } from "jotai";
-// import { modalOpenAtom } from "../../stores/ProjectModalAtom";
+import * as p from "../styles/ProjectItem";
 import stellAR from "/img/project/StellAR_logo.png";
 import NeoRo from "/img/project/NeoRo_logo.png";
 import Neureka from "/img/project/Neureka_logo.png";
@@ -24,8 +22,8 @@ const ProjectItem = ({ title, date, content }: Props) => {
 
   return (
     <>
-      <h.ProjectItem onClick={cardClick}>
-        <h.ProjectThumbnail>
+      <p.ProjectItem onClick={cardClick}>
+        <p.ProjectThumbnail>
           <img
             src={
               title == "stellAR"
@@ -35,13 +33,13 @@ const ProjectItem = ({ title, date, content }: Props) => {
                 : Neureka
             }
           />
-        </h.ProjectThumbnail>
-        <h.ProjectContent>
+        </p.ProjectThumbnail>
+        <p.ProjectContent>
           <p className="project_title">{title}</p>
           <p>{date}</p>
           <p>{content}</p>
-        </h.ProjectContent>
-      </h.ProjectItem>
+        </p.ProjectContent>
+      </p.ProjectItem>
     </>
   );
 };

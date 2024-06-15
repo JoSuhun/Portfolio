@@ -1,4 +1,5 @@
 import * as h from "../styles/Home";
+import * as p from "../styles/ProjectSection";
 import { useAtomValue, useSetAtom } from "jotai";
 import { modalOpenAtom } from "../../stores/ProjectModalAtom";
 import ProjectModal from "./ProjectModal";
@@ -37,7 +38,7 @@ const ProjectSection = () => {
         <p className="typing">Projects,</p>
         <div className="title">저의 프로젝트를 소개합니다.</div>
       </div>
-      <h.ProjectContainer>
+      <p.ProjectContainer>
         <ProjectItem
           title="stellAR"
           date="2024. 04. 08. ~ 2024. 05. 20."
@@ -53,7 +54,7 @@ const ProjectSection = () => {
           date="2024. 02. 26. ~ 2024. 04. 05."
           content="사용자 맞춤 증권 기사 추천 서비스"
         />
-      </h.ProjectContainer>
+      </p.ProjectContainer>
     </h.Wrapper>
   );
 };

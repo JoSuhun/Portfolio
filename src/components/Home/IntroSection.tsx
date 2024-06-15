@@ -1,13 +1,15 @@
 import * as h from "../styles/Home";
+import * as i from "../styles/IntroSection";
 import { Canvas } from "@react-three/fiber";
 import TomatoGlbModel from "./TomatoGlbModel";
 import { OrbitControls } from "@react-three/drei";
 import { useSetAtom } from "jotai";
 import { IntroAtom } from "../../stores/NavAtom";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const IntroSection = () => {
   const SetIntroRef = useSetAtom(IntroAtom);
+  const [tomatoHovered, setTomatoHovered] = useState(false);
   const Ref = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
     if (Ref.current) {
@@ -17,7 +19,7 @@ const IntroSection = () => {
 
   return (
     <h.Wrapper className="intro_wrapper" ref={Ref}>
-      <h.IntroContainer className="intro_container">
+      <i.IntroContainer className="intro_container">
         <section>
           <p className="typing">안녕하세요,</p>
           <div className="title">
@@ -49,7 +51,7 @@ const IntroSection = () => {
         </section>
 
         <section>
-          <h.GlbWrapper className="glb_section">
+          <i.GlbWrapper className="glb_section">
             <Canvas
               gl={{ antialias: true }}
               shadows={"soft"}
@@ -64,11 +66,14 @@ const IntroSection = () => {
               <directionalLight intensity={1} position={[-1, 2, 2]} />
               <directionalLight intensity={0.7} position={[200, -10, 2]} />
               <directionalLight intensity={1} position={[-100, 0, -100]} />
-              <TomatoGlbModel />
+              <TomatoGlbModel setTomatoHovered={setTomatoHovered} />
             </Canvas>
-          </h.GlbWrapper>
+            <div className={tomatoHovered ? "tomato_ex hovered" : "tomato_ex"}>
+              겉과 속이 똑같은 토마토 ㅋㅋ
+            </div>
+          </i.GlbWrapper>
         </section>
-      </h.IntroContainer>
+      </i.IntroContainer>
     </h.Wrapper>
   );
 };

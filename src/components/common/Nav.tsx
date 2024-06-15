@@ -43,14 +43,7 @@ const Nav = () => {
             height="2"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <line
-              x1="1"
-              y1="0"
-              x2="70"
-              y2="0"
-              stroke="black"
-              stroke-width="2"
-            />
+            <line x1="1" y1="0" x2="70" y2="0" stroke="black" strokeWidth="2" />
           </svg>
           <n.NavBtn
             className={
@@ -66,14 +59,7 @@ const Nav = () => {
             height="2"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <line
-              x1="1"
-              y1="0"
-              x2="70"
-              y2="0"
-              stroke="black"
-              stroke-width="2"
-            />
+            <line x1="1" y1="0" x2="70" y2="0" stroke="black" strokeWidth="2" />
           </svg>
           <n.NavBtn
             className={scrollPosition >= 1800 ? "focused" : ""}
