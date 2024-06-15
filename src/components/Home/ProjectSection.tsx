@@ -1,22 +1,10 @@
 import * as h from "../styles/Home";
 import * as p from "../styles/ProjectSection";
-import { useAtomValue, useSetAtom } from "jotai";
-import { modalOpenAtom } from "../../stores/ProjectModalAtom";
-import ProjectModal from "./ProjectModal";
 import ProjectItem from "./ProjectItem";
-import { ProjectsAtom } from "../../stores/NavAtom";
 import { useEffect, useRef, useState } from "react";
 
 const ProjectSection = () => {
-  const isOpen = useAtomValue(modalOpenAtom);
-  const SetProjectsRef = useSetAtom(ProjectsAtom);
   const Ref = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    if (Ref.current) {
-      SetProjectsRef(Ref.current);
-    }
-  }, [Ref, SetProjectsRef]);
 
   const [scrollPosition, setScrollPosition] = useState(0);
 
@@ -33,7 +21,6 @@ const ProjectSection = () => {
 
   return (
     <h.Wrapper ref={Ref}>
-      {isOpen ? <ProjectModal /> : null}
       <div className={scrollPosition > 1500 ? "header focused" : "header"}>
         <p className="typing">Projects,</p>
         <div className="title">저의 프로젝트를 소개합니다.</div>
