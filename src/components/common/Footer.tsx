@@ -1,4 +1,4 @@
-import * as f from "../styles/Footer";
+import * as f from "../styles/common/Footer";
 const Footer = () => {
   return (
     <f.FooterWrapper>

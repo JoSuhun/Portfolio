@@ -1,5 +1,6 @@
 export interface ProjectType {
   title: string;
+  theme_color: string;
   image: string[];
   intro: {
     date: string;

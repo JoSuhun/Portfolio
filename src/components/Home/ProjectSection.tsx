@@ -1,5 +1,5 @@
-import * as h from "../styles/Home";
-import * as p from "../styles/ProjectSection";
+import * as h from "../styles/Home/Home";
+import * as p from "../styles/Home/ProjectSection";
 import ProjectItem from "./ProjectItem";
 import { useEffect, useRef, useState } from "react";
 

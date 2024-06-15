@@ -1,5 +1,5 @@
 import { memo } from "react";
-import * as l from "../styles/Loading";
+import * as l from "../styles/common/Loading";
 import tooltip from "/img/welcome-tooltip.png";
 type Props = {
   progress: number;

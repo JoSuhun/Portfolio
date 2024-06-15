@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import * as n from "../styles/Nav";
+import * as n from "../styles/common/Nav";
 import { useAtomValue } from "jotai";
 import { IntroAtom, ProjectsAtom, SkillsAtom } from "../../stores/NavAtom";
 

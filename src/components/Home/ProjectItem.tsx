@@ -1,4 +1,4 @@
-import * as p from "../styles/ProjectItem";
+import * as p from "../styles/Home/ProjectItem";
 import stellAR from "/img/project/StellAR_logo.png";
 import NeoRo from "/img/project/NeoRo_logo.png";
 import Neureka from "/img/project/Neureka_logo.png";

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import * as h from "../styles/Home";
-import * as i from "../styles/InfoSection";
+import * as h from "../styles/Home/Home";
+import * as i from "../styles/Home/InfoSection";
 import { Canvas } from "@react-three/fiber";
 import { Html, OrbitControls } from "@react-three/drei";
 import PokemonGlbModel from "./PokemonGlbModel";

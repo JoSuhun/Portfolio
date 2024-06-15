@@ -1,5 +1,5 @@
-import * as h from "../styles/Home";
-import * as i from "../styles/IntroSection";
+import * as h from "../styles/Home/Home";
+import * as i from "../styles/Home/IntroSection";
 import { Canvas } from "@react-three/fiber";
 import TomatoGlbModel from "./TomatoGlbModel";
 import { OrbitControls } from "@react-three/drei";

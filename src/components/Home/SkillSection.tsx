@@ -1,5 +1,5 @@
-import * as h from "../styles/Home";
-import * as s from "../styles/SkillSection";
+import * as h from "../styles/Home/Home";
+import * as s from "../styles/Home/SkillSection";
 import html_img from "/img/skills/html.png";
 import css_img from "/img/skills/css.png";
 import python_img from "/img/skills/python.png";

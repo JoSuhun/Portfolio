@@ -1,6 +1,7 @@
 {
   "stellAR": {
     "title": "StellAR",
+    "theme_color": "#541D7A",
     "image": [
       "/img/project/stellAR_main.png",
       "/img/project/stellAR_planet.png",
@@ -62,6 +63,7 @@
   },
   "너에게, 로그인": {
     "title": "너에게, 로그인",
+    "theme_color": "#FF59AF",
     "image": [
       "/img/project/Neoro_main.png",
       "/img/project/Neoro_diary.gif",
@@ -103,6 +105,7 @@
   },
   "Neureka": {
     "title": "Neureka",
+    "theme_color": "#3A4CA8",
     "image": [
       "/img/project/Neureka_main.gif",
       "/img/project/Neureka_all.gif",
