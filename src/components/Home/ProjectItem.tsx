@@ -2,8 +2,7 @@ import * as p from "../styles/ProjectItem";
 import stellAR from "/img/project/StellAR_logo.png";
 import NeoRo from "/img/project/NeoRo_logo.png";
 import Neureka from "/img/project/Neureka_logo.png";
-import { useAtom, useSetAtom } from "jotai";
-import { modalOpenAtom, projectTitle } from "../../stores/ProjectModalAtom";
+import { useNavigate } from "react-router-dom";
 
 type Props = {
   title: string;
@@ -12,12 +11,10 @@ type Props = {
 };
 
 const ProjectItem = ({ title, date, content }: Props) => {
-  const [isOpen, setIsOpen] = useAtom(modalOpenAtom);
-  const setProjectTitle = useSetAtom(projectTitle);
+  const navigate = useNavigate();
 
   const cardClick = () => {
-    setIsOpen(!isOpen);
-    setProjectTitle(title);
+    navigate(`/project/${title}`);
   };
 
   return (
