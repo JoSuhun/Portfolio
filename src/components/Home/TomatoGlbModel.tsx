@@ -3,11 +3,7 @@ import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
-type Props = {
-  setTomatoHovered: (hovered: boolean) => void;
-};
-
-const TomatoGlbModel = ({ setTomatoHovered }: Props) => {
+const TomatoGlbModel = () => {
   const { scene } = useGLTF("/img/tomato.glb");
   const ref = useRef<THREE.Mesh>(null);
 
@@ -17,26 +13,7 @@ const TomatoGlbModel = ({ setTomatoHovered }: Props) => {
     }
   });
 
-  const handlePointerOver = () => {
-    document.body.style.cursor = "pointer";
-    setTomatoHovered(true);
-  };
-
-  const handlePointerOut = () => {
-    document.body.style.cursor = "default";
-    setTomatoHovered(false);
-  };
-
-  return (
-    <primitive
-      ref={ref}
-      scale={0.9}
-      object={scene}
-      position-y={-4}
-      onPointerOver={handlePointerOver}
-      onPointerOut={handlePointerOut}
-    />
-  );
+  return <primitive ref={ref} scale={0.9} object={scene} position-y={-4} />;
 };
 
 export default TomatoGlbModel;

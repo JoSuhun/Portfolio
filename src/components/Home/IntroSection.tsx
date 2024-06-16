@@ -5,11 +5,10 @@ import TomatoGlbModel from "./TomatoGlbModel";
 import { OrbitControls } from "@react-three/drei";
 import { useSetAtom } from "jotai";
 import { IntroAtom } from "../../stores/NavAtom";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 const IntroSection = () => {
   const SetIntroRef = useSetAtom(IntroAtom);
-  const [tomatoHovered, setTomatoHovered] = useState(false);
   const Ref = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
     if (Ref.current) {
@@ -66,10 +65,15 @@ const IntroSection = () => {
               <directionalLight intensity={1} position={[-1, 2, 2]} />
               <directionalLight intensity={0.7} position={[200, -10, 2]} />
               <directionalLight intensity={1} position={[-100, 0, -100]} />
-              <TomatoGlbModel setTomatoHovered={setTomatoHovered} />
+              <TomatoGlbModel />
             </Canvas>
-            <div className={tomatoHovered ? "tomato_ex hovered" : "tomato_ex"}>
-              겉과 속이 똑같은 토마토 ㅋㅋ
+            <div className="tomato_q">?</div>
+            <div className="tomato_ex">
+              <p>"사과가 되지 말고 도마도가 되어라"</p>
+              <p>
+                : 사과처럼 겉만 붉고 속은 흰 사람이 되지 말고 토마토처럼 겉과
+                속이 같은 견실한 사람이 되라는 말.
+              </p>
             </div>
           </i.GlbWrapper>
         </section>

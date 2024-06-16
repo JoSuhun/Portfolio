@@ -1,5 +1,6 @@
-const ProjectContent = () => {
-  return <div>ProjectContent</div>;
-};
+import styled from "styled-components";
 
-export default ProjectContent;
+export const ContentWrapper = styled.div`
+  background-color: orange;
+  margin: 20px;
+`;

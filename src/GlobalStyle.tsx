@@ -5,6 +5,7 @@ import PretendardExtraLight from "./fonts/Pretendard-ExtraLight.woff2";
 import PretendardLight from "./fonts/Pretendard-Light.woff2";
 import Pretendard from "./fonts/Pretendard-Regular.woff2";
 import PretendardSemiBold from "./fonts/Pretendard-SemiBold.woff2";
+import DOSSaemmul from "./fonts/DOSSaemmul.ttf";
 
 export const GlobalStyle = createGlobalStyle`
     @font-face {
@@ -45,6 +46,12 @@ export const GlobalStyle = createGlobalStyle`
         src: local('Pretendard-SemiBold'), local('Pretendard-SemiBold');
         font-style: bold;
         src: url(${PretendardSemiBold}) format('woff2');
+    }
+    @font-face {
+        font-family: 'DOSSaemmul';
+        src: local('DOSSaemmul'), local('DOSSaemmul');
+        font-style: normal;
+        src: url(${DOSSaemmul}) format('truetype');
     }
 
     html {

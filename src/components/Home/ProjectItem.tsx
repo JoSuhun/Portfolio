@@ -23,7 +23,7 @@ const ProjectItem = ({ title, date, content }: Props) => {
         <p.ProjectThumbnail>
           <img
             src={
-              title == "stellAR"
+              title == "StellAR"
                 ? stellAR
                 : title == "너에게, 로그인"
                 ? NeoRo

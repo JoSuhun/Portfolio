@@ -27,7 +27,7 @@ const ProjectSection = () => {
       </div>
       <p.ProjectContainer>
         <ProjectItem
-          title="stellAR"
+          title="StellAR"
           date="2024. 04. 08. ~ 2024. 05. 20."
           content="증강현실(AR)과 3D 맵을 활용한 별자리 앱 서비스"
         />

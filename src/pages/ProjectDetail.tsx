@@ -3,7 +3,11 @@ import projectsData from "../assets/my_projects.json";
 import { useEffect, useState } from "react";
 import ProjectHeader from "../components/ProjectDetail/ProjectHeader";
 import * as p from "../components/styles/ProjectDetail/ProjectDetail";
+
 import { ProjectType } from "../types/ProjectType";
+import ProjectNav from "../components/ProjectDetail/ProjectNav";
+import ProjectContent from "../components/ProjectDetail/ProjectContent";
+import Footer from "../components/common/Footer";
 
 const projects: Record<string, ProjectType> = projectsData;
 
@@ -29,12 +33,14 @@ const ProjectDetail = () => {
         <ProjectHeader
           title={projectInfo?.title as string}
           color={projectInfo?.theme_color as string}
+          summary={projectInfo?.intro.summary as string}
         />
         <p.InnerWrapper>
-          <div>{projectInfo?.title}</div>
-          <div>{projectInfo?.link.github}</div>
+          <ProjectNav />
+          <ProjectContent projectInfo={projectInfo as ProjectType} />
         </p.InnerWrapper>
       </p.Wrapper>
+      <Footer />
     </>
   );
 };

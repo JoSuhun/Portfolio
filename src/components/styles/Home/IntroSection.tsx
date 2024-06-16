@@ -26,19 +26,62 @@ export const GlbWrapper = styled.div`
   @media (max-width: 768px) {
     height: 250px;
   }
-  .tomato_ex {
+  .tomato_q {
     color: black;
-    min-width: max-content;
-    font-size: 1.1rem;
+    background-color: #ffffff2c;
+    border: 1px solid #8a8a8a;
+    backdrop-filter: blur(7px);
+    border-radius: 50%;
+    padding: 5px;
+    font-family: DOSSaemmul;
+    width: 33px;
+    aspect-ratio: 1;
+    font-size: 2rem;
     position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
+    top: 5%;
+    right: 10%;
+    /* transform: translate(-50%, -50%); */
+    /* opacity: 0; */
     transition: all 300ms ease-in-out;
-    &.hovered {
-      opacity: 1;
-      bottom: 7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    &:hover {
+      background-color: #ff00002c;
+    }
+  }
+  &:hover .tomato_q {
+    opacity: 1;
+  }
+  .tomato_ex {
+    /* font-family: DOSSaemmul; */
+    width: 70%;
+    font-size: 1.1rem;
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+    position: absolute;
+    top: 15%;
+    right: 10%;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    z-index: 0;
+    :nth-child(1) {
+      font-family: Galmuri11-Bold;
+      margin-bottom: 5px;
+    }
+    :nth-child(2) {
+    }
+  }
+
+  .tomato_q:hover + .tomato_ex {
+    opacity: 1;
+  }
+  @media (max-width: 1900px) {
+    .tomato_ex {
+      font-size: 0.9rem;
     }
   }
 `;
