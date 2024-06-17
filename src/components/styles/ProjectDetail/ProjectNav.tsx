@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SideNavWrapper = styled.div`
+export const SideNavWrapper = styled.div<{ $color: string }>`
   background-color: var(--card-background);
   box-shadow: var(--card-shadow);
   border-radius: 20px;

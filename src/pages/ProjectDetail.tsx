@@ -36,7 +36,10 @@ const ProjectDetail = () => {
           summary={projectInfo?.intro.summary as string}
         />
         <p.InnerWrapper>
-          <ProjectNav title={projectInfo?.title as string} />
+          <ProjectNav
+            title={projectInfo?.title as string}
+            color={projectInfo?.theme_color as string}
+          />
           <ProjectContent projectInfo={projectInfo as ProjectType} />
         </p.InnerWrapper>
       </p.Wrapper>

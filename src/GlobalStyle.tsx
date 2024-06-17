@@ -83,6 +83,11 @@ export const GlobalStyle = createGlobalStyle`
             background-size: cover;
             opacity: 0.5;
         }
+
+        ::selection {
+            color: white;
+            background-color: #8cbe8d;
+        }
     }
 
     div {

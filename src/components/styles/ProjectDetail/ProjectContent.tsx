@@ -49,7 +49,7 @@ export const ListTitle = styled.div`
   font-size: 1.2rem;
   display: flex;
   align-items: center;
-  padding-top: 3%;
+  margin-top: 10px;
   @media (max-width: 1500px) {
     font-size: 1rem;
   }
@@ -64,6 +64,7 @@ export const ListIcon = styled.img`
 export const InnerWrapper = styled.div`
   max-width: 100%;
   margin: 10px 0;
+  margin-bottom: 3%;
   padding: 5px 0;
   font-family: Pretendard-Light;
   font-size: 1.2rem;

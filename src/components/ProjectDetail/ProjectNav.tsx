@@ -10,9 +10,10 @@ import { useEffect, useState } from "react";
 
 type Props = {
   title: string;
+  color: string;
 };
 
-const ProjectNav = ({ title }: Props) => {
+const ProjectNav = ({ title, color }: Props) => {
   const ProjectIntroRef = useAtomValue(ProjectIntroAtom);
   const ProjectSkillRef = useAtomValue(ProjectSkillAtom);
   const ProjectTaskRef = useAtomValue(ProjectTaskAtom);
@@ -31,11 +32,11 @@ const ProjectNav = ({ title }: Props) => {
     };
   }, []);
   return (
-    <n.SideNavWrapper>
+    <n.SideNavWrapper $color={color}>
       <div className="inner_wrapper">
         <p
           className={
-            scrollPosition > 60 ? "visible project_title" : "project_title"
+            scrollPosition > 80 ? "visible project_title" : "project_title"
           }
         >
           {title}

@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const NavWrapper = styled.div`
   height: 4.5dvh;
+  width: 97vw;
   position: fixed;
   display: flex;
   align-items: center;
