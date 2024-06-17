@@ -2,19 +2,13 @@ import { useEffect, useState } from "react";
 import * as n from "../styles/common/Nav";
 import { useAtomValue } from "jotai";
 import { IntroAtom, ProjectsAtom, SkillsAtom } from "../../stores/NavAtom";
+import { scrollToRef } from "../../utils/scrollToRef";
 
 const Nav = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const IntroRef = useAtomValue(IntroAtom);
   const SkillsRef = useAtomValue(SkillsAtom);
   const ProjectsRef = useAtomValue(ProjectsAtom);
-
-  const scrollToRef = (ref: HTMLDivElement) => {
-    if (ref) {
-      const top = ref.getBoundingClientRect().top + window.scrollY;
-      window.scrollTo({ top, behavior: "smooth" });
-    }
-  };
 
   const updateScroll = () => {
     setScrollPosition(window.scrollY || document.documentElement.scrollTop);

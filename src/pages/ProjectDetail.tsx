@@ -36,7 +36,7 @@ const ProjectDetail = () => {
           summary={projectInfo?.intro.summary as string}
         />
         <p.InnerWrapper>
-          <ProjectNav />
+          <ProjectNav title={projectInfo?.title as string} />
           <ProjectContent projectInfo={projectInfo as ProjectType} />
         </p.InnerWrapper>
       </p.Wrapper>

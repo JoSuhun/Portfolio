@@ -10,14 +10,13 @@ export const Wrapper = styled.div`
 `;
 
 export const InnerWrapper = styled.div`
-  width: 90vw;
-  height: 100vh;
+  width: 90%;
   align-self: center;
+  min-height: 100vh;
   margin-bottom: 10vh;
   position: relative;
   display: grid;
-  grid-template-columns: 0.4fr 1.6fr;
-  background-color: #f9f9f9;
+  grid-template-columns: 1fr 4fr;
+  background-color: #ffffff6b;
   border-radius: 20px;
-  /* box-shadow: 5px 5px 15px #bfbfbf14, -5px -5px 15px #bfbfbf14; */
 `;

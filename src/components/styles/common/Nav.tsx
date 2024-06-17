@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const NavWrapper = styled.div`
-  width: 97vw;
   height: 4.5dvh;
   position: fixed;
   display: flex;
