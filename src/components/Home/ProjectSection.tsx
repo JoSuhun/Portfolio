@@ -1,10 +1,18 @@
+import { useSetAtom } from "jotai";
 import * as h from "../styles/Home/Home";
 import * as p from "../styles/Home/ProjectSection";
 import ProjectItem from "./ProjectItem";
 import { useEffect, useRef, useState } from "react";
+import { ProjectsAtom } from "../../stores/NavAtom";
 
 const ProjectSection = () => {
   const Ref = useRef<HTMLDivElement | null>(null);
+  const SetProjectsRef = useSetAtom(ProjectsAtom);
+  useEffect(() => {
+    if (Ref.current) {
+      SetProjectsRef(Ref.current);
+    }
+  }, [Ref, SetProjectsRef]);
 
   const [scrollPosition, setScrollPosition] = useState(0);
 

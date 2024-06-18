@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const ContentWrapper = styled.div`
   margin: 20px;
   font-family: Galmuri11;
+  position: relative;
 
   .title {
     font-size: 1.2rem;
@@ -49,7 +50,7 @@ export const ListTitle = styled.div`
   font-size: 1.2rem;
   display: flex;
   align-items: center;
-  margin-top: 10px;
+  padding-top: 10px;
   @media (max-width: 1500px) {
     font-size: 1rem;
   }

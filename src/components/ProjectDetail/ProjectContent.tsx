@@ -103,8 +103,8 @@ const ProjectContent = ({ projectInfo }: Props) => {
                   ))}
                 </div>
               ) : (
-                <div>
-                  <p key={idx}>• {item}</p>
+                <div key={idx}>
+                  <p>• {item}</p>
                 </div>
               )
             )}

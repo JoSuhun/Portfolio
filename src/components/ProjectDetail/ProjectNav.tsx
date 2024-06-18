@@ -7,13 +7,17 @@ import {
   ProjectTaskAtom,
 } from "../../stores/ProjectNavAtom";
 import { useEffect, useState } from "react";
+import link_icon from "/img/icons/link-dark.png";
+import ProjectNavItem from "./ProjectNavItem";
 
 type Props = {
   title: string;
   color: string;
+  github: string;
+  notion: string;
 };
 
-const ProjectNav = ({ title, color }: Props) => {
+const ProjectNav = ({ title, color, github, notion }: Props) => {
   const ProjectIntroRef = useAtomValue(ProjectIntroAtom);
   const ProjectSkillRef = useAtomValue(ProjectSkillAtom);
   const ProjectTaskRef = useAtomValue(ProjectTaskAtom);
@@ -41,31 +45,39 @@ const ProjectNav = ({ title, color }: Props) => {
         >
           {title}
         </p>
-        <n.NavItem
-          onClick={() =>
-            ProjectIntroRef?.scrollIntoView({ behavior: "smooth" })
-          }
-        >
-          프로젝트 개요
-        </n.NavItem>
-        <n.NavItem
-          onClick={() =>
-            ProjectSkillRef?.scrollIntoView({ behavior: "smooth" })
-          }
-        >
-          사용한 기술 스택 [FE]
-        </n.NavItem>
-        <n.NavItem
-          onClick={() => ProjectTaskRef?.scrollIntoView({ behavior: "smooth" })}
-        >
-          담당 업무
-        </n.NavItem>
-        <n.NavItem
-          onClick={() =>
-            ProjectReviewRef?.scrollIntoView({ behavior: "smooth" })
-          }
-        >
-          회고
+        <ProjectNavItem
+          title="프로젝트 개요"
+          sectionRef={ProjectIntroRef as HTMLDivElement}
+        />
+        <ProjectNavItem
+          title="사용한 기술 스택"
+          sectionRef={ProjectSkillRef as HTMLDivElement}
+        />
+        <ProjectNavItem
+          title="담당 업무"
+          sectionRef={ProjectTaskRef as HTMLDivElement}
+        />
+        <ProjectNavItem
+          title="회고"
+          sectionRef={ProjectReviewRef as HTMLDivElement}
+        />
+        <n.NavItem className="link_container">
+          <div className="link_box">
+            <div
+              className="go_github"
+              onClick={() => window.open(`${github}`, "_blank")}
+            >
+              github
+              <img src={link_icon} />
+            </div>
+            <div
+              className="go_notion"
+              onClick={() => window.open(`${notion}`, "_blank")}
+            >
+              notion
+              <img src={link_icon} />
+            </div>
+          </div>
         </n.NavItem>
       </div>
     </n.SideNavWrapper>

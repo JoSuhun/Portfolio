@@ -39,6 +39,8 @@ const ProjectDetail = () => {
           <ProjectNav
             title={projectInfo?.title as string}
             color={projectInfo?.theme_color as string}
+            github={projectInfo?.link.github as string}
+            notion={projectInfo?.link.notion as string}
           />
           <ProjectContent projectInfo={projectInfo as ProjectType} />
         </p.InnerWrapper>

@@ -36,19 +36,59 @@ export const NavItem = styled.div`
   font-family: Galmuri11;
   cursor: pointer;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   width: 90%;
-  height: 30px;
-  margin: 5px 0;
+  margin: 5px;
   padding: 5px 0;
-  padding-left: 3%;
   background-color: #ffffff80;
   border-radius: 10px;
   @media (max-width: 1500px) {
     font-size: 0.9rem;
-    height: 25px;
+    /* height: 25px; */
+  }
+  div {
+    padding: 0 5%;
+    display: flex;
   }
   &:hover {
     background-color: white;
+  }
+
+  &.link_container {
+    &:hover {
+      background-color: #ffffff80;
+    }
+  }
+
+  .link_box {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    div {
+      font-family: Galmuri11-Bold;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      padding: 3px;
+      &.go_github {
+        background-color: #dbcfec;
+        margin-bottom: 7px;
+        &:hover {
+          background-color: #d7c8eb;
+        }
+      }
+      &.go_notion {
+        background-color: #f7f3bf;
+        &:hover {
+          background-color: #f3eeae;
+        }
+      }
+      img {
+        height: 20px;
+      }
+    }
   }
 `;
