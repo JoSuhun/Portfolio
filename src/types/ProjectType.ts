@@ -13,4 +13,5 @@ export interface ProjectType {
   };
   skill: string[];
   task: string[][];
+  review: string[][];
 }

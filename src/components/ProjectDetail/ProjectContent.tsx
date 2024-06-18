@@ -117,7 +117,26 @@ const ProjectContent = ({ projectInfo }: Props) => {
           <c.ListIcon src={list_icon} />
           회고
         </c.ListTitle>
-        <c.InnerWrapper>...</c.InnerWrapper>
+        <c.InnerWrapper>
+          <div className="task_box">
+            {projectInfo?.review.map((item, idx) =>
+              item.length > 1 ? (
+                <div key={idx}>
+                  <p> • {item[0]}</p>
+                  {item.slice(1, item.length).map((i, idx) => (
+                    <p key={idx} className="list_child">
+                      - {i}
+                    </p>
+                  ))}
+                </div>
+              ) : (
+                <div key={idx}>
+                  <p>• {item}</p>
+                </div>
+              )
+            )}
+          </div>
+        </c.InnerWrapper>
       </div>
     </c.ContentWrapper>
   );

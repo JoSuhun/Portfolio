@@ -34,6 +34,7 @@ export const ContentWrapper = styled.div`
     .list_child {
       font-family: Pretendard-Light;
       margin-left: 25px;
+      line-height: 1.5;
     }
   }
   @media (max-width: 1500px) {
