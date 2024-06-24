@@ -69,7 +69,7 @@ const IntroSection = () => {
             </Canvas>
             <div className="tomato_q">?</div>
             <div className="tomato_ex">
-              <p>"사과가 되지 말고 도마도가 되어라"</p>
+              <p>"사과가 되지 말고 토마도가 되어라"</p>
               <p>
                 : 사과처럼 겉만 붉고 속은 흰 사람이 되지 말고 토마토처럼 겉과
                 속이 같은 견실한 사람이 되라는 말.

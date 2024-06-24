@@ -4,14 +4,14 @@ export const ProjectItem = styled.div`
   /* width: 100%; */
   padding: 20px;
   background-color: var(--card-background);
-  box-shadow: var(--card-shadow);
   cursor: pointer;
+  box-shadow: none;
   transform: translateY(0%);
-  transition: all 300ms ease-in-out;
+  transition: all 200ms ease-in-out;
   border-radius: 10px;
   &:hover {
-    transform: translateY(-2%);
-    box-shadow: none;
+    transform: translateY(-2px);
+    box-shadow: var(--card-shadow);
     div {
       &::before {
         opacity: 0;

@@ -8,7 +8,7 @@ import BeachBallModel from "./BeachBallModel";
 
 const InfoSection = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
-  const [pikaClicked, setPikaClicked] = useState(false);
+  const [pikaClicked, setPikaClicked] = useState(true);
 
   const updateScroll = () => {
     setScrollPosition(window.scrollY || document.documentElement.scrollTop);

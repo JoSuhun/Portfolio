@@ -11,7 +11,7 @@ const PokemonGlbModel = ({ pikaClicked, setPikaClicked }: Props) => {
   const { scene, animations } = useGLTF("/img/pokemon.glb");
   const ref = useRef<THREE.Mesh>(null);
   const { actions } = useAnimations(animations, ref);
-  const [currentAction, setCurrentAction] = useState("Idle");
+  const [currentAction, setCurrentAction] = useState("Dance");
   scene.traverse((child) => {
     if (child) {
       child.castShadow = true;

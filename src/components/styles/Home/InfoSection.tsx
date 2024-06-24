@@ -43,13 +43,14 @@ export const InfoLeftSection = styled.section`
     overflow: visible;
   }
   .pika_tooltip {
+    font-family: DOSSaemmul;
     position: absolute;
     min-width: max-content;
     z-index: 100;
     top: -230px;
     color: #ffffff;
     letter-spacing: 1px;
-    font-size: 0.8rem;
+    font-size: 1rem;
     background-color: #41414a;
     padding: 5px 10px;
     border-radius: 5px;
