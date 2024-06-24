@@ -1,8 +1,8 @@
 import * as h from "../styles/Home/Home";
 import * as i from "../styles/Home/IntroSection";
-import { Canvas } from "@react-three/fiber";
-import TomatoGlbModel from "./TomatoGlbModel";
-import { OrbitControls } from "@react-three/drei";
+// import { Canvas } from "@react-three/fiber";
+// import TomatoGlbModel from "./TomatoGlbModel";
+// import { OrbitControls } from "@react-three/drei";
 import { useSetAtom } from "jotai";
 import { IntroAtom } from "../../stores/NavAtom";
 import { useEffect, useRef } from "react";
@@ -50,7 +50,7 @@ const IntroSection = () => {
         </section>
 
         <section>
-          <i.GlbWrapper className="glb_section">
+          {/* <i.GlbWrapper className="glb_section">
             <Canvas
               gl={{ antialias: true }}
               shadows={"soft"}
@@ -75,7 +75,7 @@ const IntroSection = () => {
                 속이 같은 견실한 사람이 되라는 말.
               </p>
             </div>
-          </i.GlbWrapper>
+          </i.GlbWrapper> */}
         </section>
       </i.IntroContainer>
     </h.Wrapper>

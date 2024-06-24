@@ -1,13 +1,14 @@
 import { memo } from "react";
 import * as l from "../styles/common/Loading";
 import tooltip from "/img/welcome-tooltip.png";
+import bgimage from "/img/bgimage.png";
 type Props = {
   progress: number;
 };
 
 const Loading = memo(({ progress }: Props) => {
   return (
-    <l.LoadingWrapper>
+    <l.LoadingWrapper $bgimage={bgimage}>
       <div className="inner_wrapper">
         <div className="welcome_message">
           <img src={tooltip} alt="" />

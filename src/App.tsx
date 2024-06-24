@@ -10,7 +10,7 @@ function App() {
   const Home = lazy(() =>
     Promise.all([
       import("./pages/Home"),
-      new Promise((resolve) => setTimeout(resolve, 3000)),
+      new Promise((resolve) => setTimeout(resolve, 300)),
     ]).then(([module]) => module)
   );
 
@@ -19,7 +19,7 @@ function App() {
       setProgress((prev) =>
         prev < 90 ? prev + 10 : prev >= 90 && prev < 99 ? prev + 3 : prev
       );
-    }, 500);
+    }, 300);
 
     return () => clearInterval(interval);
   }, []);

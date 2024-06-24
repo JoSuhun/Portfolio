@@ -1,16 +1,17 @@
 import styled from "styled-components";
 
-export const LoadingWrapper = styled.div`
+export const LoadingWrapper = styled.div<{ $bgimage: string }>`
   width: 100vw;
   height: 100dvh;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #41414a;
+  background-color: #004c26;
 
   .inner_wrapper {
-    background-color: #f9f9f9;
+    background-image: url(${(props) => props.$bgimage});
+    background-size: cover;
     position: relative;
     display: flex;
     align-items: center;
@@ -21,9 +22,11 @@ export const LoadingWrapper = styled.div`
     box-shadow: 5px 5px 10px #00000022, -5px -5px 15px #00000022;
   }
   .welcome_message {
+    position: absolute;
+    top: 30%;
     width: 450px;
     height: 150px;
-    font-family: Galmuri11;
+    font-family: Galmuri11-Bold;
     animation: bounce 2s infinite;
 
     @keyframes bounce {
@@ -71,11 +74,11 @@ export const LoadingWrapper = styled.div`
     color: black;
     position: absolute;
     bottom: 10%;
-    right: 10%;
+    left: 5%;
     font-size: 6rem;
     font-family: Galmuri11-Bold;
     color: #f6bd20;
-    text-shadow: 5px 5px #747483;
+    text-shadow: 5px 5px black;
   }
   div {
     z-index: 15;
@@ -97,7 +100,7 @@ export const ProgressBarContainer = styled.div<{ progress: number }>`
   /* text-align: center; */
   position: absolute;
   bottom: 5%;
-  right: 10%;
+  left: 5%;
   width: 50%;
 
   .progress {
