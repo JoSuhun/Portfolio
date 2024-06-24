@@ -24,12 +24,6 @@ function App() {
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    if (progress >= 99) {
-      setProgress(100);
-    }
-  }, [progress]);
-
   return (
     <Router>
       <Suspense fallback={<Loading progress={progress} />}>
