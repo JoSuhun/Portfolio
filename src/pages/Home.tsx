@@ -31,9 +31,8 @@ const Home = () => {
 
   return (
     <>
-      {isInitialLoad ? (
-        <Loading progress={progress} />
-      ) : (
+      {isInitialLoad && <Loading progress={progress} />}
+      {!isInitialLoad && (
         <Suspense fallback={<Loading progress={progress} />}>
           <Nav />
           <h.HomeBackGround className="home_bg">
