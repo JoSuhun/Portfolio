@@ -78,24 +78,24 @@ export const Wrapper = styled.div`
     margin-bottom: 10px;
     width: max-content;
     color: var(--color-red);
-    font-size: 1.7rem;
+    font-size: 2rem;
     white-space: nowrap;
   }
 
   .title {
-    font-size: 2.1rem;
+    font-size: 2.3rem;
   }
   .title-expand {
     font-family: Pretendard-ExtraLight;
     display: flex;
     padding-top: 10px;
-    font-size: 1.6rem;
+    font-size: 1.9rem;
     :nth-child(2) {
       text-decoration: var(--color-green) wavy underline;
     }
   }
 
-  @media (max-width: 1400px) {
+  @media (max-width: 1500px) {
     .typing {
       margin-bottom: 10px;
       font-size: 1.5rem;
