@@ -4,9 +4,10 @@
     "theme_color": "#541D7A",
     "image": [
       "/img/project/stellAR_main.png",
-      "/img/project/stellAR_planet.png",
-      "/img/project/stellAR_constellation.png",
-      "/img/project/stellAR_starmark.png"
+      "/img/project/stellAR_AR.gif",
+      "/img/project/stellAR_constellation.gif",
+      "/img/project/stellAR_card.gif",
+      "/img/project/stellAR_time.gif"
     ],
     "intro": {
       "date": "2024. 04. 08. ~ 2024. 05. 20.",
