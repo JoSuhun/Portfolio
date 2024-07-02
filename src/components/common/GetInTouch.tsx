@@ -23,7 +23,7 @@ const GetInTouch = () => {
     return () => setCopied(false);
   }, []);
   return (
-    <>
+    <div ref={boxRef}>
       <div
         className="fixed bottom-10 right-0 w-auto h-10 bg-gon-orange
       flex justify-center items-center px-3
@@ -36,7 +36,6 @@ const GetInTouch = () => {
       </div>
 
       <div
-        ref={boxRef}
         className={`fixed bottom-24 h-auto w-70 p-5
             bg-white bg-opacity-40 rounded-2xl backdrop-blur-sm shadow-md
              transition-transform duration-500
@@ -77,7 +76,7 @@ const GetInTouch = () => {
           <div>Velog</div>
         </t.TouchItem>
       </div>
-    </>
+    </div>
   );
 };
 
