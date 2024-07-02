@@ -1,10 +1,38 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as h from "../components/styles/Home/Home";
 import { scrollToRef } from "../utils/scrollToRef";
 import Info from "../components/IntroPage/Info";
 
 const IntroPage = () => {
   const InfoRef = useRef<HTMLDivElement>(null);
+  const [prevScrollPosition, setPrevScrollPosition] = useState(0);
+  const [autoScrollEnabled, setAutoScrollEnabled] = useState(true);
+
+  const handleScroll = () => {
+    const currentScrollPosition =
+      window.scrollY || document.documentElement.scrollTop;
+
+    if (currentScrollPosition > prevScrollPosition) {
+      if (currentScrollPosition > 100 && autoScrollEnabled) {
+        scrollToRef(InfoRef.current as HTMLDivElement);
+        setAutoScrollEnabled(false);
+      }
+    } else {
+      setAutoScrollEnabled(true);
+    }
+    setPrevScrollPosition(currentScrollPosition);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [prevScrollPosition]);
+
+  const handleClick = () => {
+    scrollToRef(InfoRef.current as HTMLDivElement);
+  };
 
   return (
     <>
@@ -30,11 +58,13 @@ const IntroPage = () => {
               안녕하세요, 조수훈입니다.
             </div>
           </div>
-          <button
-            className="absolute bottom-5 left-1/2"
-            onClick={() => scrollToRef(InfoRef.current as HTMLDivElement)}
-          >
-            어서오세요 - !
+          <button className="absolute bottom-5 left-1/2" onClick={handleClick}>
+            <div className="scrolldown">
+              <div className="chevrons">
+                <div className="chevrondown"></div>
+                <div className="chevrondown"></div>
+              </div>
+            </div>
           </button>
         </div>
       </h.HomeBackGround>

@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const SkillContainer = styled.div`
   width: 100%;
   min-height: 50vh;
-  margin-top: 10px;
+  /* margin-top: 10px; */
 
   display: grid;
   grid-template-areas:
@@ -18,7 +18,7 @@ export const SkillContainer = styled.div`
   }
 `;
 
-export const SkillBox = styled.div<{ point: string }>`
+export const SkillBox = styled.div<{ $point: string }>`
   display: flex;
   position: relative;
   padding: 25px;
@@ -33,14 +33,14 @@ export const SkillBox = styled.div<{ point: string }>`
   .level {
     background: linear-gradient(
       to top,
-      ${(props) => props.point} 50%,
+      ${(props) => props.$point} 50%,
       transparent 40%
     );
   }
 
   .ex {
     display: none;
-    background-color: ${(props) => props.point};
+    background-color: ${(props) => props.$point};
   }
 
   &.competent {
@@ -56,7 +56,7 @@ export const SkillBox = styled.div<{ point: string }>`
         width: 0;
         height: 0;
         border: 10px solid transparent;
-        border-top-color: ${(props) => props.point};
+        border-top-color: ${(props) => props.$point};
         rotate: 180deg;
       }
     }
@@ -77,7 +77,7 @@ export const SkillBox = styled.div<{ point: string }>`
         width: 0;
         height: 0;
         border: 10px solid transparent;
-        border-top-color: ${(props) => props.point};
+        border-top-color: ${(props) => props.$point};
       }
     }
     &:hover .advanced_ex {
@@ -99,7 +99,7 @@ export const SkillBox = styled.div<{ point: string }>`
         width: 0;
         height: 0;
         border: 10px solid transparent;
-        border-top-color: ${(props) => props.point};
+        border-top-color: ${(props) => props.$point};
         rotate: 180deg;
       }
     }

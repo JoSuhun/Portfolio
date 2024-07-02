@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import * as n from "../styles/common/Nav";
-import { useAtomValue } from "jotai";
-import { IntroAtom, ProjectsAtom, SkillsAtom } from "../../stores/NavAtom";
-import { scrollToRef } from "../../utils/scrollToRef";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Nav = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
-  const IntroRef = useAtomValue(IntroAtom);
-  const SkillsRef = useAtomValue(SkillsAtom);
-  const ProjectsRef = useAtomValue(ProjectsAtom);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const getNavBtnClass = (path: string) => {
+    return location.pathname === path ? "bg-gon-orange focused" : "";
+  };
 
   const updateScroll = () => {
     setScrollPosition(window.scrollY || document.documentElement.scrollTop);
@@ -23,13 +24,13 @@ const Nav = () => {
 
   return (
     <>
-      <n.NavWrapper className={scrollPosition > 100 ? "scroll_down" : ""}>
+      <n.NavWrapper className={scrollPosition > 500 ? "scroll_down" : ""}>
         <n.NavBtnBox>
           <n.NavBtn
-            className={scrollPosition < 1000 ? "focused" : ""}
-            onClick={() => IntroRef?.scrollIntoView({ behavior: "smooth" })}
+            className={`${getNavBtnClass("/")}`}
+            onClick={() => navigate("/")}
           >
-            안녕하세요?
+            Home
           </n.NavBtn>
           <svg
             className="line"
@@ -40,10 +41,8 @@ const Nav = () => {
             <line x1="1" y1="0" x2="70" y2="0" stroke="black" strokeWidth="2" />
           </svg>
           <n.NavBtn
-            className={
-              scrollPosition >= 1000 && scrollPosition < 1800 ? "focused" : ""
-            }
-            onClick={() => scrollToRef(SkillsRef as HTMLDivElement)}
+            className={`${getNavBtnClass("/skills")}`}
+            onClick={() => navigate("/skills")}
           >
             Skills
           </n.NavBtn>
@@ -56,8 +55,8 @@ const Nav = () => {
             <line x1="1" y1="0" x2="70" y2="0" stroke="black" strokeWidth="2" />
           </svg>
           <n.NavBtn
-            className={scrollPosition >= 1800 ? "focused" : ""}
-            onClick={() => scrollToRef(ProjectsRef as HTMLDivElement)}
+            className={`${getNavBtnClass("/projects")}`}
+            onClick={() => navigate("/projects")}
           >
             Projects
           </n.NavBtn>

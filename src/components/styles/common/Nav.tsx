@@ -8,23 +8,15 @@ export const NavWrapper = styled.div`
   align-items: center;
   justify-content: center;
   z-index: 10;
-  top: 10px;
+  top: 15px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: var(--color-red);
   border-radius: 15px;
   font-family: Galmuri11;
   box-shadow: 3px 3px #0000001c;
-  @media (max-width: 600px) {
-    height: 30px;
-  }
+  background-color: #9898984b;
   &.scroll_down {
-    background-color: #ffffffd6;
-    .line {
-      line {
-        stroke: var(--color-red);
-      }
-    }
+    background-color: #ffffff4c;
   }
 `;
 
@@ -55,7 +47,6 @@ export const NavBtn = styled.div`
   &.focused {
     color: #ececec;
     text-shadow: 2px 2px var(--color-grey);
-    background-color: var(--color-green);
     padding: 0 3%;
     border-radius: 50px;
   }
