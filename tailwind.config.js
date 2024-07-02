@@ -13,6 +13,9 @@ export default {
           orange: "#ca5329",
         },
       },
+      backgroundImage: {
+        whale_island: "url(./public/img/bgimage.png)",
+      },
     },
     fontFamily: {
       Galmuri11: ["Galmuri11"],

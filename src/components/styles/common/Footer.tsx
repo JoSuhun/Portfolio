@@ -4,7 +4,6 @@ export const FooterWrapper = styled.div`
   min-height: 35dvh;
   padding: 5dvh 5dvw;
   padding-top: 13dvh;
-  border-top: 1px solid var(--color-red);
   display: flex;
   flex-direction: column;
   /* justify-content: space-between; */

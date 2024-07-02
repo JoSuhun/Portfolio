@@ -6,10 +6,10 @@ const Info = () => {
       <div className="h-screen p-16 bg-gon-darkgreen relative">
         <Nav />
         <div
-          className="h-full p-10 bg-[url('../../img/bgimage.png')] bg-cover bg-opacity-70 rounded-3xl shadow-md flex flex-col
+          className="relative h-full p-10 bg-whale_island bg-cover rounded-3xl shadow-md flex flex-col
        justify-center items-center"
         >
-          <div>
+          <div className="z-10">
             <div className="py-10">
               <div
                 className="2xl:text-5xl lg:text-4xl md:text-3xl sm:text-xl
@@ -21,7 +21,10 @@ const Info = () => {
                 : 지식만 많은 사람보다, 생각도 많은 사람이 되고 싶습니다.
               </p>
             </div>
-            <div className="[&>p]:text-xl [&>p]:mb-1 [&>p]:font-Pretendard_Light">
+            <div
+              className="[&>p]:text-xl [&>p]:mb-1 [&>p]:font-Pretendard_Light
+             bg-white bg-opacity-40 p-3 rounded-xl"
+            >
               <i.InfoComment>
                 <span>효율적이고 재사용이 가능한</span> 코드를 작성합니다.
               </i.InfoComment>

@@ -11,6 +11,7 @@ import Footer from "../components/common/Footer";
 
 import left_arrow from "/img/icons/left-arrow.png";
 import home from "/img/icons/home.png";
+import GetInTouch from "../components/common/GetInTouch";
 
 const projects: Record<string, ProjectType> = projectsData;
 
@@ -55,7 +56,7 @@ const ProjectDetail = () => {
           </div>
         </p.BackBtn>
       </p.Wrapper>
-      <Footer />
+      <GetInTouch />
     </>
   );
 };

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import * as h from "../components/styles/Home/Home";
 import { scrollToRef } from "../utils/scrollToRef";
 import Info from "../components/IntroPage/Info";
+import GetInTouch from "../components/common/GetInTouch";
 
 const IntroPage = () => {
   const InfoRef = useRef<HTMLDivElement>(null);
@@ -71,6 +72,8 @@ const IntroPage = () => {
       <div ref={InfoRef}>
         <Info />
       </div>
+
+      <GetInTouch />
     </>
   );
 };

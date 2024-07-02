@@ -101,8 +101,8 @@ export const GlobalStyle = createGlobalStyle`
         }
 
         ::selection {
-            color: white;
-            background-color: #8cbe8d;
+            color: black;
+            background-color: #ffd500;
         }
     }
 

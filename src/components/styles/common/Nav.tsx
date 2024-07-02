@@ -14,7 +14,8 @@ export const NavWrapper = styled.div`
   border-radius: 15px;
   font-family: Galmuri11;
   box-shadow: 3px 3px #0000001c;
-  background-color: #9898984b;
+  background-color: #b6b6b64b;
+
   &.scroll_down {
     background-color: #ffffff4c;
   }

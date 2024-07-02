@@ -15,6 +15,7 @@ export const ContentWrapper = styled.div`
   .img_box {
     width: 100%;
     height: 360px;
+    display: flex;
     overflow-y: auto;
     margin-top: 10px;
 

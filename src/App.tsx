@@ -12,7 +12,6 @@ function App() {
         <Route path="/" element={<IntroPage />} />
         <Route path="/skills" element={<SkillsPage />} />
         <Route path="/projects" element={<ProjectsPage />} />
-
         <Route path="/project/:name" element={<ProjectDetail />} />
       </Routes>
     </Router>

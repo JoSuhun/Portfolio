@@ -90,7 +90,7 @@ export const SkillBox = styled.div<{ $point: string }>`
     .beginner_ex {
       bottom: -60px;
 
-      right: 0;
+      right: 50%;
       &::after {
         content: "";
         position: absolute;
