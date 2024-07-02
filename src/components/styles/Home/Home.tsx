@@ -3,56 +3,19 @@ import styled from "styled-components";
 export const HomeBackGround = styled.div`
   overflow: hidden;
   position: relative;
-  width: 100%;
-  height: 100%;
-
-  &.home_bg {
+  /* width: 100%;
+  height: 100%; */
+  .home_bg {
     &::before {
       position: absolute;
       content: "";
-      width: 600%;
-      height: 600%;
+      width: 200%;
+      height: 120%;
       transform: rotate(-45deg);
-      background-image: radial-gradient(#fefff6 50px, transparent 0);
-      background-size: 250px 250px;
+      background-image: radial-gradient(#fefff6c1 65px, transparent 0);
+      background-size: 220px 220px;
       background-position: center center;
       transform-origin: center center;
-      top: -3000px;
-      left: 1300px;
-      z-index: -3;
-    }
-  }
-  @media (max-width: 992px) {
-    &.home_bg {
-      &::before {
-        top: -2500px;
-        left: 2500px;
-        z-index: -3;
-      }
-    }
-  }
-
-  @media (max-width: 870px) {
-    &.home_bg {
-      &::before {
-        background-image: radial-gradient(#fefff6 45px, transparent 0);
-        background-size: 250px 250px;
-        top: -3000px;
-        left: 4000px;
-      }
-    }
-  }
-
-  @media (max-width: 600px) {
-    &.home_bg {
-      &::before {
-        width: 700%;
-        height: 700%;
-        background-image: radial-gradient(#fefff6 30px, transparent 0);
-        background-size: 200px 200px;
-        top: -6500px;
-        left: 6000px;
-      }
     }
   }
 `;

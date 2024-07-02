@@ -6,8 +6,24 @@ import PretendardLight from "./fonts/Pretendard-Light.woff2";
 import Pretendard from "./fonts/Pretendard-Regular.woff2";
 import PretendardSemiBold from "./fonts/Pretendard-SemiBold.woff2";
 import DOSSaemmul from "./fonts/DOSSaemmul.ttf";
+import DungGeunMo from "./fonts/DungGeunMo.ttf";
+import PartialSans from "./fonts/PartialSansKR-Regular.otf";
 
 export const GlobalStyle = createGlobalStyle`
+
+    @font-face {
+        font-family: 'DungGeunMo';
+        src: local('DungGeunMo'), local('DungGeunMo');
+        font-style: normal;
+        src: url(${DungGeunMo}) format('truetype');
+    }
+    @font-face {
+        font-family: 'PartialSans';
+        src: local('PartialSansKR-Regular'), local('PartialSansKR-Regular');
+        font-style: normal;
+        src: url(${PartialSans}) format('opentype');
+    }
+
     @font-face {
         font-family: 'Galmuri11';
         src: local('Galmuri11'), local('Galmuri11');
@@ -78,10 +94,10 @@ export const GlobalStyle = createGlobalStyle`
             top: 0;
             left: 0;
             position: absolute;
-            z-index: -2;
+            z-index: -1;
             background-image:url('/img/background_paper.jpg');
             background-size: cover;
-            opacity: 0.5;
+            opacity: 0.3;
         }
 
         ::selection {

@@ -1,18 +1,20 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import Home from "./pages/Home";
 import ProjectDetail from "./pages/ProjectDetail";
-import { Suspense, lazy, useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import Loading from "./components/common/Loading";
+import IntroPage from "./pages/IntroPage";
+import "../index.css";
 
 function App() {
   const [progress, setProgress] = useState(0);
 
-  const Home = lazy(() =>
-    Promise.all([
-      import("./pages/Home"),
-      new Promise((resolve) => setTimeout(resolve, 300)),
-    ]).then(([module]) => module)
-  );
+  // const Home = lazy(() =>
+  //   Promise.all([
+  //     import("./pages/Home"),
+  //     new Promise((resolve) => setTimeout(resolve, 300)),
+  //   ]).then(([module]) => module)
+  // );
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -28,7 +30,7 @@ function App() {
     <Router>
       <Suspense fallback={<Loading progress={progress} />}>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<IntroPage />} />
           <Route path="/project/:name" element={<ProjectDetail />} />
         </Routes>
       </Suspense>
