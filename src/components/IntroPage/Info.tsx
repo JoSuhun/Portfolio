@@ -3,10 +3,10 @@ import * as i from "../styles/IntroPage/InfoStyle";
 const Info = () => {
   return (
     <>
-      <div className="h-screen p-16 bg-gon-darkgreen relative">
+      <div className="h-screen xl:p-16 p-8 bg-gon-darkgreen relative">
         <Nav />
         <div
-          className="relative h-full p-10 bg-whale_island bg-cover rounded-3xl shadow-md flex flex-col
+          className="relative h-full xl:p-10 p-4 bg-whale_island bg-cover rounded-3xl shadow-md flex flex-col
        justify-center items-center"
         >
           <div className="z-10">
@@ -17,12 +17,12 @@ const Info = () => {
               >
                 " 생각이 많은 개발자 조수훈입니다. "
               </div>
-              <p className="xl:text-lg">
+              <p className="2xl:text-2xl xl:text-xl lg:text-lg md:text-md">
                 : 지식만 많은 사람보다, 생각도 많은 사람이 되고 싶습니다.
               </p>
             </div>
             <div
-              className="[&>p]:text-xl [&>p]:mb-1 [&>p]:font-Pretendard_Light
+              className="[&>p]:xl:text-xl [&>p]:md:text-md [&>p]:text-sm [&>p]:mb-1 [&>p]:font-Pretendard_Light
              bg-white bg-opacity-40 p-3 rounded-xl"
             >
               <i.InfoComment>

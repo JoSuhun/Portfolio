@@ -17,9 +17,8 @@ const SkillsPage = () => {
     <>
       <div className="h-screen">
         <Nav />
-
-        <div className="p-20">
-          <PageHeader title="이러한 기술을 활용할 수 있습니다 - !" />
+        <div className="pt-24 p-20">
+          <PageHeader title="이러한 기술을 활용할 수 있습니다." />
           <SkillSection />
         </div>
       </div>

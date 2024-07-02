@@ -14,13 +14,19 @@ const IntroPage = () => {
       window.scrollY || document.documentElement.scrollTop;
 
     if (currentScrollPosition > prevScrollPosition) {
-      if (currentScrollPosition > 100 && autoScrollEnabled) {
+      // Downscroll
+      if (currentScrollPosition >= 50 && autoScrollEnabled) {
         scrollToRef(InfoRef.current as HTMLDivElement);
         setAutoScrollEnabled(false);
       }
-    } else {
-      setAutoScrollEnabled(true);
+    } else if (currentScrollPosition < prevScrollPosition) {
+      // Upscroll
+      if (currentScrollPosition <= 900 && !autoScrollEnabled) {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        setAutoScrollEnabled(true);
+      }
     }
+
     setPrevScrollPosition(currentScrollPosition);
   };
 
@@ -29,10 +35,11 @@ const IntroPage = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [prevScrollPosition]);
+  }, [prevScrollPosition, autoScrollEnabled]);
 
   const handleClick = () => {
     scrollToRef(InfoRef.current as HTMLDivElement);
+    setAutoScrollEnabled(false);
   };
 
   return (
@@ -72,7 +79,6 @@ const IntroPage = () => {
       <div ref={InfoRef}>
         <Info />
       </div>
-
       <GetInTouch />
     </>
   );

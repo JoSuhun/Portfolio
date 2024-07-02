@@ -107,6 +107,11 @@ export const SkillBox = styled.div<{ $point: string }>`
       display: block;
     }
   }
+  @media (max-width: 1440px) {
+    .ex {
+      font-size: 0.9rem;
+    }
+  }
   @media (max-width: 992px) {
     .ex {
       display: block;
@@ -114,7 +119,7 @@ export const SkillBox = styled.div<{ $point: string }>`
       min-width: 100%;
       font-family: Galmuri11;
       color: darkslategray;
-      font-size: 0.7rem;
+      font-size: 0.8rem;
       &.competent_ex {
         top: unset;
         left: unset;
@@ -157,7 +162,7 @@ export const SkillLevel = styled.p`
   padding-left: 5px;
   padding-right: 15px;
   margin-bottom: 5px;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   align-self: start;
   @media (max-width: 992px) {
     font-size: 1rem;
@@ -213,9 +218,6 @@ export const Additional = styled.div`
   padding: 10px;
   min-width: 100px;
   color: var(--color-grey);
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-family: Pretendard;
-  @media (max-width: 992px) {
-    font-size: 0.8rem;
-  }
 `;

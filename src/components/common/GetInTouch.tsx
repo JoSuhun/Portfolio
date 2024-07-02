@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
 import mail_icon from "/img/icons/mail.png";
 import link_icon from "/img/icons/link.png";
@@ -7,15 +7,27 @@ import * as t from "../styles/common/GetInTouchStyle";
 const GetInTouch = () => {
   const [clicked, setClicked] = useState(false);
   const [copied, setCopied] = useState(false);
+  const boxRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      if (boxRef.current && !boxRef.current.contains(e.target as Node)) {
+        setClicked(false);
+      }
+    };
+    window.addEventListener("mousedown", handleClick);
+    return () => window.removeEventListener("mousedown", handleClick);
+  }, [boxRef]);
+
   useEffect(() => {
     return () => setCopied(false);
   }, []);
   return (
     <>
       <div
-        className="fixed bottom-5 right-0 w-auto h-10 bg-gon-orange
+        className="fixed bottom-10 right-0 w-auto h-10 bg-gon-orange
       flex justify-center items-center px-3
-      font-DungGeunMo text-lg
+      font-DungGeunMo 2xl:text-2xl text-xl
       text-white cursor-pointer shadow-md
       "
         onClick={() => setClicked(!clicked)}
@@ -24,7 +36,8 @@ const GetInTouch = () => {
       </div>
 
       <div
-        className={`fixed bottom-20 h-auto w-70 p-5
+        ref={boxRef}
+        className={`fixed bottom-24 h-auto w-70 p-5
             bg-white bg-opacity-40 rounded-2xl backdrop-blur-sm shadow-md
              transition-transform duration-500
              right-0
@@ -33,7 +46,7 @@ const GetInTouch = () => {
       >
         <div
           className="w-auto h-auto flex justify-center items-center px-3
-      font-DungGeunMo text-xl text-gon-orange"
+      font-DungGeunMo 2xl:text-2xl text-xl text-gon-orange"
         >
           <div>Get In Touch!</div>
         </div>

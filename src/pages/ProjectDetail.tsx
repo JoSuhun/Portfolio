@@ -7,7 +7,6 @@ import * as p from "../components/styles/ProjectDetail/ProjectDetail";
 import { ProjectType } from "../types/ProjectType";
 import ProjectNav from "../components/ProjectDetail/ProjectNav";
 import ProjectContent from "../components/ProjectDetail/ProjectContent";
-import Footer from "../components/common/Footer";
 
 import left_arrow from "/img/icons/left-arrow.png";
 import home from "/img/icons/home.png";

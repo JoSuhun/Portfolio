@@ -16,7 +16,7 @@ const ProjectsPage = () => {
     <>
       <div className="h-screen">
         <Nav />
-        <div className="p-20">
+        <div className="pt-24 p-20">
           <PageHeader title="저의 프로젝트를 소개합니다 - !" />
           <div className="mt-10">
             <ProjectSection />

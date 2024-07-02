@@ -49,10 +49,6 @@ const ProjectContent = ({ projectInfo }: Props) => {
 
   return (
     <c.ContentWrapper>
-      {/* <div className="title">
-        <span>{projectInfo?.title}</span> - {projectInfo?.intro.summary}
-      </div> */}
-
       <div ref={IntroRef}>
         <c.ListTitle>
           <c.ListIcon src={cat_icon} />
